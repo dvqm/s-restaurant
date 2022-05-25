@@ -1,0 +1,112 @@
+@use '../common';
+
+.topNav {
+  width: calc(#{common.$content-width} - 210px);
+  padding: 16px common.$block-padding;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .logo {
+    width: 60px;
+
+  }
+
+  .address {
+    width: 490px;
+
+    input {
+      @include common.fontStyle(
+                      common.$btn-font-size,
+                      common.$darker-font-cr,
+                      left
+      );
+      border: none;
+      width: 350px;
+      padding-left: 25px;
+      margin-left: 10px;
+
+
+    }
+
+    span {
+      @include common.fontStyle(
+                      common.$btn-font-size,
+                      common.$darker-font-cr);
+      position: relative;
+
+      &:after {
+        content: common.$positionSvg;
+        position: absolute;
+        right: -30px;
+        top: 1px;
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+
+    &:before {
+      content: common.$searchSvg;
+      position: absolute;
+      left: 10px;
+      top: 1px;
+    }
+
+    input {
+      @include common.fontStyle(
+                      common.$btn-font-size,
+                      common.$darker-font-cr,
+                      left
+      );
+      border: none;
+      width: 150px;
+      padding-left: 25px;
+      margin-left: 10px;
+      outline: 0;
+
+      &::placeholder {
+        color: common.$darker-font-cr;
+      }
+
+      &:focus::placeholder {
+        font-weight: normal;
+        color: common.$border-cr;
+        outline: solid 1px common.$border-cr;
+      }
+    }
+
+  }
+
+  button, #login {
+    position: relative;
+    background: common.$light-item-cr;
+    box-shadow: 0 5px 10px rgba(255, 174, 0, 0.26), 0 20px 40px rgba(255, 174, 0, 0.29);
+    border-radius: 8px;
+    border: none;
+    width: 100px;
+    height: 45px;
+    padding-left: 15px;
+
+
+    @include common.fontStyle(
+                    common.$btn-font-size,
+                    common.$bg-cr-20,
+                    center
+    );
+
+    &:before {
+      content: common.$userSvg;
+      position: absolute;
+      left: 10px;
+    }
+
+    &:active {
+      background-color: common.$bg-cr-20;
+      color: common.$light-font-cr;
+    }
+  }
+
+}

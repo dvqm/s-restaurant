@@ -1,0 +1,55 @@
+@use '../common';
+
+.menu {
+  width: common.$content-width;
+  margin-top: 25px;
+  background-color: common.$bg-cr-12;
+  padding: common.$block-padding;
+  display: flex;
+  flex-direction: column;
+
+  .categoryBtn {
+    @include common.sliderBtn(50px);
+  }
+
+  .menuLevel2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menuLevel3 {
+    width: 200px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+}
+
+.menuContent {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    span {
+      @include common.fontStyle(
+                      common.$figure-headers-font-size,
+                      common.$h2-font-cr, center
+      )
+    }
+  }
+}
