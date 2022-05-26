@@ -1,0 +1,73 @@
+{
+  "promo": {
+    "template": {
+      "d": {
+        "tag": "div",
+        "className": "dealCard"
+      },
+      "c": {
+        "photoWrap": {
+          "d": {
+            "tag": "div",
+            "className": "foodPhoto"
+          },
+          "c": {
+            "foodPhoto": {
+              "d": {
+                "tag": "img",
+                "src": "",
+                "alt": "Meal picture"
+              }
+            },
+            "discount": {
+              "d": {
+                "tag": "span",
+                "className": "discount",
+                "textContent": " %"
+              }
+            }
+          }
+        },
+        "mealName": {
+          "d": {
+            "tag": "span",
+            "className": "mealName"
+          }
+        },
+        "timer": {
+          "d": {
+            "tag": "span",
+            "className": "timer",
+            "textContent": " Days Remaining"
+          }
+        }
+      }
+    },
+    "data": {
+      "promo1": {
+        "img": "assets/meals/mealImg1.png",
+        "discount": 15,
+        "name": "tasty meal",
+        "time": 6
+      },
+      "promo2": {
+        "img": "assets/meals/mealImg2.png",
+        "discount": 20,
+        "name": "very tasty meal",
+        "time": 4
+      },
+      "promo3": {
+        "img": "assets/meals/mealImg3.png",
+        "discount": 10,
+        "name": "tasty meal",
+        "time": 10
+      },
+      "promo4": {
+        "img": "assets/meals/mealImg4.png",
+        "discount": 25,
+        "name": "very tasty meal",
+        "time": 2
+      }
+    }
+  }
+}
