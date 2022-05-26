@@ -15,7 +15,7 @@
             "d": {
               "tag": "img",
               "className": "logo",
-              "src": "${logo}",
+              "src": "assets/logo.png",
               "alt": "logotype"
             }
           },
@@ -149,7 +149,11 @@
           "tag": "div",
           "className": "promo"
         },
-        "c": {}
+        "c": {
+          "i": {
+            "promo": "promoCards"
+          }
+        }
       },
       "popularItems": {
         "d": {
