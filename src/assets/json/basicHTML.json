@@ -219,9 +219,36 @@
                 "d": {
                   "tag": "div",
                   "className": "menuLevel3"
+                },
+                "c": {
+                  "secBtn": {
+                    "d": {
+                      "tag": "button",
+                      "className": "secBtn",
+                      "id": "viewAllCategories",
+                      "textContent": "View all >"
+                    }
+                  },
+                  "backBtn": {
+                    "d": {
+                      "tag": "button",
+                      "className": "categoryBtn backward",
+                      "id": "categBackBtn"
+                    }
+                  },
+                  "forwBtn": {
+                    "d": {
+                      "tag": "button",
+                      "className": "categoryBtn forward",
+                      "id": "categForwBtn"
+                    }
+                  }
                 }
               }
             }
+          },
+          "i": {
+            "menuContent": "menuContent"
           }
         }
       },
