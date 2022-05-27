@@ -265,6 +265,9 @@
               "textContent": "Our Top Cities"
             }
           },
+          "i": {
+            "footerCities": "footerCities"
+          },
           "upperLine": {
             "d": {
               "tag": "div",

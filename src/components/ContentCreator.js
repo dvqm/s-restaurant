@@ -187,6 +187,38 @@ class ContentCreator {
 
     return shell;
   }
+
+  footerCities() {
+    const { cityList } = this.settings.footer;
+
+    const { data } = cityList;
+
+    const tempWrapper = cityList.template.c;
+
+    const cards = cityList.template;
+
+    cards.c = {};
+
+    Object.entries(data).map((card) => {
+      const [name, href] = card;
+
+      const template = structuredClone(tempWrapper.link);
+
+      template.d.textContent = name;
+
+      template.d.href = template.d.href.concat(href);
+
+      cards.c[name] = template;
+
+      return cards.c[name];
+    });
+
+    const shell = {};
+
+    shell.cityList = cards;
+
+    return shell;
+  }
 }
 
 export default ContentCreator;

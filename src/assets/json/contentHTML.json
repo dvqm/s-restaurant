@@ -70,6 +70,7 @@
       }
     }
   },
+
   "popularItems": {
     "template": {
       "mealSlider": {
@@ -224,6 +225,7 @@
       }
     }
   },
+
   "featuredRestaurants": {
     "template": {
       "restContent": {
@@ -364,6 +366,7 @@
       }
     }
   },
+
   "menuContent": {
     "template": {
       "d": {
@@ -417,6 +420,51 @@
       "steak": {
         "img": "steak.png",
         "name": "Steak"
+      }
+    }
+  },
+
+  "footer": {
+    "cityList": {
+      "template": {
+        "d": {
+          "tag": "div",
+          "className": "cityList"
+        },
+        "c": {
+          "link": {
+            "d": {
+              "tag": "a",
+              "href": "https://"
+            }
+          }
+        }
+      },
+      "data": {
+          "San Francisco": "#",
+          "Los Angeles": "#",
+          "New York City": "#",
+          "Chicago": "#",
+          "Columbus": "#",
+          "Miami": "#",
+          "Washington DC": "#",
+          "Orange County": "#",
+          "Phoenix": "#",
+          "New Mexico": "#",
+          "San Diego": "#",
+          "Seattle": "#",
+          "Atlanta": "#",
+          "Las Vegas": "#",
+          "Albuquerque": "#",
+          "East Bay": "#",
+          "Portland": "#",
+          "Charlotte": "#",
+          "Sacramento": "#",
+          "Long Beach": "#",
+          "Nashville": "#",
+          "Denver": "#",
+          "Oklahoma City": "#",
+          "New Orleans": "#"
       }
     }
   }
