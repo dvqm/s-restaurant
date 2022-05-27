@@ -69,5 +69,158 @@
         "time": 2
       }
     }
+  },
+  "popularItems": {
+    "template": {
+      "mealSlider": {
+        "d": {
+          "tag": "div",
+          "className": "mealSlider"
+        },
+        "c": {
+          "prevBtn": {
+            "d": {
+              "tag": "button",
+              "className": "sliderBtn backward",
+              "id": "mealBackwardButton"
+            }
+          },
+          "sliderContent": {
+            "d": {
+              "tag": "div",
+              "className": "sliderContent"
+            },
+            "c": {
+              "mealCard": {
+                "d": {
+                  "tag": "div",
+                  "className": "mealCard"
+                },
+                "c": {
+                  "mealPhoto": {
+                    "d": {
+                      "tag": "img",
+                      "className": "mealPhoto",
+                      "alt": "Meal picture"
+                    }
+                  },
+                  "mealName": {
+                    "d": {
+                      "tag": "span",
+                      "className": "mealName"
+                    }
+                  },
+                  "restName": {
+                    "d": {
+                      "tag": "span",
+                      "className": "restName"
+                    }
+                  },
+                  "mealPrice": {
+                    "d": {
+                      "tag": "span",
+                      "className": "mealPrice",
+                      "textContent": "$"
+                    }
+                  },
+                  "orderBtn": {
+                    "d": {
+                      "tag": "button",
+                      "id": "orderNow",
+                      "textContent": "Order Now"
+                    }
+                  },
+                  "composition": {
+                    "d": {
+                      "tag": "p",
+                      "className": "composition"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "nextBtn": {
+            "d": {
+              "tag": "button",
+              "className": "sliderBtn forward",
+              "id": "mealForwardButton"
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "meal1": {
+        "img": "assets/meals/cheeseBurger.png",
+        "name": "Cheese Burger",
+        "restaurant": "Burger Arena",
+        "price": 3.88,
+        "composition": "the juiciest aged beef patty, smashed and pushed into the pan for maximum crispy edges, melty American- style cheese on top, a butter-toasted brioche bun, spicy/sweet/sour/crunchy pickles, a riff on a famous sauce from a famous burger from a certain famous American fast food outlet."
+      },
+      "meal2": {
+        "img": "assets/meals/crispySandwich.png",
+        "name": "Crispy Sandwich",
+        "restaurant": "Fast Food Dine",
+        "price": 3.0,
+        "composition": "12 slices of sandwich bread, 8 slices of chicken, 4 tomatoes, 16 slices of bacon, lettuce, mayonnaise, butter, 8 slices of edamer"
+      },
+      "meal3": {
+        "img": "assets/meals/dancake.png",
+        "name": "Dancake",
+        "restaurant": "Cake World",
+        "price": 1.99,
+        "composition": "Sugar, WHEAT flour, EGGS, vegetable oil (canola), water, vegetable fat (coconut and palm), humectant (glycerol), modified STARCH, glucose-fructose syrup, 1.4% low fat cocoa powder, emulsifiers (mono- and diglycerides of fatty acids."
+      },
+      "meal4": {
+        "img": "assets/meals/thaiSoup.png",
+        "name": "Thai Soup",
+        "restaurant": "Foody man",
+        "price": 2.79,
+        "composition": "Authentic, bold, and delicious Thai flavors make this soup irresistible! This is the best Thai coconut soup I've had. You won't be disappointed with this one! Serve over steamed rice."
+      },
+      "meal5": {
+        "img": "assets/meals/toffesCake.png",
+        "name": "Toffe’s Cake",
+        "restaurant": "Top Sticks",
+        "price": 4.0,
+        "composition": "So, January. Here we go again. The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
+      },
+      "meal6": {
+        "img": "assets/meals/cheeseBurger.png",
+        "name": "meal6",
+        "restaurant": "Burger Arena",
+        "price": 3.88,
+        "composition": "the juiciest aged beef patty, smashed and pushed into the pan for maximum crispy edges, melty American- style cheese on top, a butter-toasted brioche bun, spicy/sweet/sour/crunchy pickles, a riff on a famous sauce from a famous burger from a certain famous American fast food outlet."
+      },
+      "meal7": {
+        "img": "assets/meals/crispySandwich.png",
+        "name": "meal7",
+        "restaurant": "Fast Food Dine",
+        "price": 3.0,
+        "composition": "12 slices of sandwich bread, 8 slices of chicken, 4 tomatoes, 16 slices of bacon, lettuce, mayonnaise, butter, 8 slices of edamer"
+      },
+      "meal8": {
+        "img": "assets/meals/dancake.png",
+        "name": "meal8",
+        "restaurant": "Cake World",
+        "price": 1.99,
+        "composition": "Sugar, WHEAT flour, EGGS, vegetable oil (canola), water, vegetable fat (coconut and palm), humectant (glycerol), modified STARCH, glucose-fructose syrup, 1.4% low fat cocoa powder, emulsifiers (mono- and diglycerides of fatty acids."
+      },
+      "meal9": {
+        "img": "assets/meals/thaiSoup.png",
+        "name": "meal9",
+        "restaurant": "Foody man",
+        "price": 2.79,
+        "composition": "Authentic, bold, and delicious Thai flavors make this soup irresistible! This is the best Thai coconut soup I've had. You won't be disappointed with this one! Serve over steamed rice."
+      },
+      "meal10": {
+        "img": "assets/meals/toffesCake.png",
+        "name": "meal10",
+        "restaurant": "Top Sticks",
+        "price": 4.0,
+        "composition": "So, January. Here we go again. The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
+      }
+    }
   }
 }
