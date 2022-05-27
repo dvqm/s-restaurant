@@ -363,5 +363,61 @@
         "currentState": ["open", "Open now"]
       }
     }
+  },
+  "menuContent": {
+    "template": {
+      "d": {
+        "tag": "div",
+        "className": "menuContent"
+      },
+      "c": {
+        "item": {
+          "d": {
+            "tag": "div",
+            "className": "item"
+          },
+          "c": {
+            "mealPict": {
+              "d": {
+                "tag": "img",
+                "alt": "Meal picture",
+                "src": "assets/meals/foodCategories/"
+              }
+            },
+            "name": {
+              "d": {
+                "tag": "span"
+              }
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "pizza": {
+        "img": "pizza.png",
+        "name": "Pizza"
+      },
+      "burger": {
+        "img": "burger.png",
+        "name": "Burger"
+      },
+      "noodles": {
+        "img": "noodles.png",
+        "name": "Noodles"
+      },
+      "subSandwich": {
+        "img": "subSandwich.png",
+        "name": "Sub-sandwich"
+      },
+      "chowmein": {
+        "img": "chowmein.png",
+        "name": "Chowmein"
+      },
+      "steak": {
+        "img": "steak.png",
+        "name": "Steak"
+      }
+    }
   }
 }
