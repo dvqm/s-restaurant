@@ -151,6 +151,42 @@ class ContentCreator {
 
     return shell;
   }
+
+  menuContent() {
+    const { menuContent } = this.settings;
+
+    const { data } = menuContent;
+
+    const tempWrapper = menuContent.template.c;
+
+    const cards = menuContent.template;
+
+    cards.c = {};
+
+    Object.entries(data).map((card) => {
+      const [key, value] = card;
+
+      const template = structuredClone(tempWrapper.item);
+
+      const mealPict = template.c.mealPict.d;
+
+      mealPict.src = mealPict.src.concat(value.img);
+
+      const name = template.c.name.d;
+
+      name.textContent = value.name;
+
+      cards.c[key] = template;
+
+      return cards.c[key];
+    });
+
+    const shell = {};
+
+    shell.menuContent = cards;
+
+    return shell;
+  }
 }
 
 export default ContentCreator;
