@@ -184,6 +184,9 @@
               "textContent": "Featured Restaurants"
             }
           },
+          "i": {
+            "restaurants": "restContent"
+          },
           "btn": {
             "d": {
               "tag": "button",
