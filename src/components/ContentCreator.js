@@ -219,6 +219,92 @@ class ContentCreator {
 
     return shell;
   }
+
+  footerMenu() {
+    const { navigation } = this.settings.footer;
+
+    const { data } = navigation;
+
+    const tempWrapper = navigation.template.c;
+
+    const cards = navigation.template;
+
+    cards.c = {};
+
+    Object.entries(data).map((card) => {
+      const [name, value] = card;
+
+      const { division } = structuredClone(tempWrapper);
+
+      const template = division.c;
+
+      template.title.d.textContent = name;
+
+      const subLevel = division;
+
+      subLevel.c = {};
+
+      subLevel.c[name] = template.title;
+
+      Object.entries(value).map((link) => {
+        const [text, href] = link;
+
+        const plate = structuredClone(template.link);
+
+        plate.d.textContent = text;
+
+        plate.d.href = plate.d.href.concat(href);
+
+        subLevel.c[text] = plate;
+
+        return subLevel.c[text];
+      });
+
+      cards.c[name] = division;
+
+      return cards.c[name];
+    });
+
+    const shell = {};
+
+    shell.navigation = cards;
+
+    return shell;
+  }
+
+  footerNetworks() {
+    const { socialNetworks } = this.settings.footer;
+
+    const tempWrapper = socialNetworks.template.c;
+
+    const cards = socialNetworks.template;
+
+    cards.c = {};
+
+    const { data } = socialNetworks;
+
+    Object.entries(data).map((card) => {
+      const [className, href] = card;
+
+      const template = structuredClone(tempWrapper.link);
+
+      template.d.href = template.d.href.concat(href);
+
+      const icon = template.c.networkPict.d;
+
+      icon.className = icon.className.concat(' ', className);
+
+      cards.c[className] = template;
+
+      return cards.c[className];
+    });
+
+    const shell = {};
+
+    shell.footerNetworks = cards;
+
+    return shell;
+  }
 }
 
 export default ContentCreator;

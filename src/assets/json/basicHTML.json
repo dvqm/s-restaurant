@@ -280,6 +280,9 @@
               "className": "menuWrap"
             },
             "c": {
+              "i": {
+                "footerMenu": "footerMenu"
+              },
               "contacts": {
                 "d": {
                   "tag": "div",
@@ -291,6 +294,9 @@
                       "tag": "h2",
                       "textContent": "Follow us"
                     }
+                  },
+                  "i": {
+                    "footerNetworks": "footerNetworks"
                   },
                   "offers": {
                     "d": {

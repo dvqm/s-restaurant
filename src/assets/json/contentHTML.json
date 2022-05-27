@@ -441,30 +441,108 @@
         }
       },
       "data": {
-          "San Francisco": "#",
-          "Los Angeles": "#",
-          "New York City": "#",
-          "Chicago": "#",
-          "Columbus": "#",
-          "Miami": "#",
-          "Washington DC": "#",
-          "Orange County": "#",
-          "Phoenix": "#",
-          "New Mexico": "#",
-          "San Diego": "#",
-          "Seattle": "#",
-          "Atlanta": "#",
-          "Las Vegas": "#",
-          "Albuquerque": "#",
-          "East Bay": "#",
-          "Portland": "#",
-          "Charlotte": "#",
-          "Sacramento": "#",
-          "Long Beach": "#",
-          "Nashville": "#",
-          "Denver": "#",
-          "Oklahoma City": "#",
-          "New Orleans": "#"
+        "San Francisco": "#",
+        "Los Angeles": "#",
+        "New York City": "#",
+        "Chicago": "#",
+        "Columbus": "#",
+        "Miami": "#",
+        "Washington DC": "#",
+        "Orange County": "#",
+        "Phoenix": "#",
+        "New Mexico": "#",
+        "San Diego": "#",
+        "Seattle": "#",
+        "Atlanta": "#",
+        "Las Vegas": "#",
+        "Albuquerque": "#",
+        "East Bay": "#",
+        "Portland": "#",
+        "Charlotte": "#",
+        "Sacramento": "#",
+        "Long Beach": "#",
+        "Nashville": "#",
+        "Denver": "#",
+        "Oklahoma City": "#",
+        "New Orleans": "#"
+      }
+    },
+    "navigation": {
+      "template": {
+        "d": {
+          "tag": "div",
+          "className": "navigation"
+        },
+        "c": {
+          "division": {
+            "d": {
+              "tag": "div",
+              "className": "division"
+            },
+            "c": {
+              "title": {
+                "d": {
+                  "tag": "h2"
+                }
+              },
+              "link": {
+                "d": {
+                  "tag": "a",
+                  "href": "https://"
+                }
+              }
+            }
+          }
+        }
+      },
+      "data": {
+        "Company": {
+          "About us": "#",
+          "Team": "#",
+          "Careers": "#",
+          "Blog": "#"
+        },
+        "Contact": {
+          "Help & Support": "#",
+          "Partner with us": "#",
+          "Ride with us": "#"
+        },
+        "Legal": {
+          "Terms & Conditions": "#",
+          "Refund & Cancellation": "#",
+          "Privacy Policy": "#",
+          "Cookie Policy": "#"
+        }
+      }
+    },
+    "socialNetworks": {
+      "template": {
+        "d": {
+          "tag": "div",
+          "className": "networks",
+          "id": "socialNetworks"
+        },
+        "c": {
+          "link": {
+            "d": {
+              "tag": "a",
+              "href": "https://"
+            },
+            "c": {
+              "networkPict": {
+                "d": {
+                  "tag": "div",
+                  "className": "socialIcons"
+                }
+              }
+            }
+          }
+        }
+      },
+      "data": {
+        "instagram": "instagram.com",
+        "facebook": "facebook.com",
+        "twitter": "twitter.com"
       }
     }
   }
