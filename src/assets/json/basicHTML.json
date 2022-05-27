@@ -166,6 +166,9 @@
               "tag": "h2",
               "textContent": "Popular Items"
             }
+          },
+          "i": {
+            "popularCards": "popularItems"
           }
         }
       },
