@@ -21,11 +21,9 @@ class ContentCreator {
 
       const discount = photoWrap.discount.d;
 
-      const discountConcat = prop.discount
+      discount.textContent = prop.discount
         .toString()
         .concat(discount.textContent);
-
-      discount.textContent = discountConcat;
 
       const mealName = template.c.mealName.d;
 
@@ -33,9 +31,7 @@ class ContentCreator {
 
       const timer = template.c.timer.d;
 
-      const timerConcat = prop.time.toString().concat(timer.textContent);
-
-      timer.textContent = timerConcat;
+      timer.textContent = prop.time.toString().concat(timer.textContent);
 
       cards[key] = template;
       return cards[key];
@@ -52,7 +48,8 @@ class ContentCreator {
       popularItems.template.mealSlider.c
     );
 
-    const cards = structuredClone(popularItems.template.mealSlider);
+    const cards = popularItems.template.mealSlider;
+
     cards.c.sliderContent.c = {};
 
     Object.entries(data).map((card) => {
@@ -62,7 +59,7 @@ class ContentCreator {
 
       const mealPhoto = template.c.mealPhoto.d;
 
-      mealPhoto.src = value.img;
+      mealPhoto.src = mealPhoto.src.concat(value.img);
 
       const mealName = template.c.mealName.d;
 
@@ -74,11 +71,9 @@ class ContentCreator {
 
       const mealPrice = template.c.mealPrice.d;
 
-      const mealPriceConcat = mealPrice.textContent.concat(
+      mealPrice.textContent = mealPrice.textContent.concat(
         value.price.toString()
       );
-
-      mealPrice.textContent = mealPriceConcat;
 
       const composition = template.c.composition.d;
 
@@ -88,8 +83,72 @@ class ContentCreator {
 
       return cards.c.sliderContent.c[key];
     });
+
     const shell = {};
+
     shell.popularItems = cards;
+
+    return shell;
+  }
+
+  restContent() {
+    const { featuredRestaurants } = this.settings;
+
+    const { data } = featuredRestaurants;
+
+    const restContent = structuredClone(
+      featuredRestaurants.template.restContent.c
+    );
+
+    const cards = featuredRestaurants.template.restContent;
+
+    cards.c = {};
+
+    Object.entries(data).map((card) => {
+      const [key, value] = card;
+
+      const template = structuredClone(restContent.restaurant);
+
+      const mealPict = template.c.mealPict.d;
+
+      mealPict.src = mealPict.src.concat(value.mealPict);
+
+      const discounts = template.c.discounts.d;
+
+      discounts.textContent = discounts.textContent.concat(value.discounts);
+
+      const deliveryRate = template.c.deliveryRate.d;
+
+      deliveryRate.textContent = value.deliveryRate;
+
+      const restLogo = template.c.restLogo.d;
+
+      restLogo.src = restLogo.src.concat(value.logo);
+
+      const restName = template.c.restName.d;
+
+      restName.textContent = value.name;
+
+      const ratings = template.c.ratings.d;
+
+      ratings.textContent = value.ratings;
+
+      const currentState = template.c.currentState.d;
+
+      const [className, textContent] = value.currentState;
+
+      currentState.className = className;
+
+      currentState.textContent = textContent;
+
+      cards.c[key] = template;
+
+      return cards.c[key];
+    });
+    const shell = {};
+
+    shell.featuredRestaurants = cards;
+
     return shell;
   }
 }
