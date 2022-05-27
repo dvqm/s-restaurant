@@ -12,7 +12,7 @@ class UiCreator {
     const { data } = this;
 
     const nodeCreate = (props) => {
-      const details = { ...props };
+      const details = structuredClone(props);
 
       const { tag } = details.d;
 
@@ -33,28 +33,27 @@ class UiCreator {
       if (details.c) {
         const { c } = details;
 
-        if (c.i) {
-          const { i } = c;
+        Object.entries(c).forEach((node) => {
+          const [key, value] = node;
+          if (key === 'i') {
+            delete c[key];
 
-          delete c.i;
+            Object.values(value).forEach((func) => {
+              const content = new ContentCreator(contentHTML);
 
-          Object.values(i).forEach((func) => {
-            const content = new ContentCreator(contentHTML);
+              const nodes = content[func]();
 
-            const nodes = content[func]();
+              Object.values(nodes).forEach((element) => {
+                const child = nodeCreate(element);
 
-            Object.values(nodes).forEach((node) => {
-              const child = nodeCreate(node);
-
-              parent.append(child);
+                parent.append(child);
+              });
             });
-          });
-        }
+          } else {
+            const child = nodeCreate(value);
 
-        Object.values(c).forEach((node) => {
-          const child = nodeCreate(node);
-
-          parent.append(child);
+            parent.append(child);
+          }
         });
       }
 
