@@ -1,0 +1,66 @@
+@use './common';
+
+.promo {
+  width: 1600px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+
+
+  .dealCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 290px;
+    margin: 30px;
+
+    .foodPhoto {
+      position: relative;
+      width: 240px;
+      height: 202px;
+
+      img {
+        position: absolute;
+        border-radius: common.$standard-bor-rad;
+        width: 240px;
+      }
+
+      .discount {
+        position: absolute;
+        bottom: -1px;
+        width: 100px;
+        height: 40px;
+        background: common.$bg-cr-10;
+        border-radius: 0 common.$standard-bor-rad;
+        text-align: center;
+        @include common.fontStyle(
+                        common.$figure-fields-font-size,
+                        common.$light-font-cr
+        );
+        line-height: 40px;
+      }
+    }
+
+    .mealName {
+      @include common.fontStyle(
+                      common.$figure-headers-font-size,
+                      common.$darker-font-cr
+      );
+    }
+
+    .timer {
+      width: 160px;
+      height: 30px;
+      background: common.$bg-cr-21;
+      border-radius: 5px;
+
+      @include common.fontStyle(
+                      common.$composition-font-size,
+                      common.$bg-cr-20,
+                      center
+      );
+      line-height: 26px;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+@use './common';
+
+.footer {
+  width: common.$content-width;
+  padding: common.$block-padding;
+  color: common.$light-font-cr;
+  background-color: common.$bg-cr-footer;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .cityList {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    a {
+      width: 140px;
+      text-decoration: none;
+      margin: 10px 100px 10px 30px;
+      @include common.fontStyle(common.$regular-font-size,
+              common.$light-font-cr,
+              left, normal, normal
+      )
+    }
+  }
+
+  .hr {
+    height: 0;
+    border-bottom: 1px solid common.$light-font-cr;
+    margin: 20px 0;
+  }
+
+  .menuWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navigation {
+    display: flex;
+    flex-flow: row wrap;
+
+    .division {
+      display: flex;
+      flex-flow: column nowrap;
+      align-content: center;
+
+      h2 {
+        width: 180px;
+        margin: 5px 100px 30px 30px;
+      }
+
+      a {
+        width: 180px;
+        text-decoration: none;
+        margin: 5px 100px 5px 30px;
+        @include common.fontStyle(common.$regular-font-size,
+                common.$light-font-cr,
+                left, normal, normal
+        )
+      }
+    }
+  }
+
+  .contacts {
+    height: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+
+  .networks {
+    $size: 25px;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    .socialIcons {
+      margin: 0 10px;
+      width: $size;
+      height: $size;
+    }
+
+    .instagram {
+      background: no-repeat center common.$instagramSvg;
+      background-size: $size $size;
+    }
+
+    .facebook {
+      background: no-repeat center common.$facebookSvg;
+      background-size: $size $size;
+    }
+
+    .twitter {
+      background: no-repeat center common.$twitterSvg;
+      background-size: $size $size;
+    }
+  }
+
+  .mailWrap {
+    position: relative;
+
+    &:before {
+      content: common.$emailSvg;
+      position: absolute;
+      left: 16px;
+      top: 13px;
+    }
+
+    input {
+      @include common.fontStyle(
+                      common.$regular-font-size,
+                      common.$light-font-cr,
+                      left
+      );
+      border-radius: 6px;
+      background-color: common.$bg-cr-footer2;
+      border: none;
+      width: 190px;
+      padding: 15px 35px;
+      margin-left: 10px;
+    }
+
+    button {
+      background: common.$bg-cr-11;
+      border: none;
+      box-shadow: 0 5px 10px rgba(255, 174, 0, 0.26), 0 20px 40px rgba(255, 174, 0, 0.29);
+      border-radius: 10px;
+
+      width: 100px;
+      height: 46px;
+      margin-left: 20px;
+
+      @include common.fontStyle(
+                      common.$composition-font-size,
+                      common.$light-font-cr,
+                      center);
+
+      &:active {
+        background-color: common.$bg-cr-20;
+        color: common.$light-font-cr;
+
+      }
+
+    }
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
