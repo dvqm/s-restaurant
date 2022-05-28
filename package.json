@@ -1,5 +1,5 @@
 {
-  "name": "sb-js-restaurant",
+  "name": "sb-restaurant",
   "version": "1.0.0",
   "description": "Practice using webpack",
   "scripts": {
@@ -8,24 +8,18 @@
     "build": "webpack",
     "ghpages": "git subtree push --prefix dist origin gh-pages"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "css-loader": "^6.5.1",
+    "css-loader": "^6.7.1",
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "html-webpack-plugin": "^5.5.0",
-    "json5": "^2.2.0",
-    "sass": "^1.44.0",
-    "sass-loader": "^12.3.0",
+    "json5": "^2.2.1",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
-  },
-  "dependencies": {
-    "node-sass": "^6.0.1"
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }

@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const sass = require('node-sass');
 const json5 = require('json5');
 
 module.exports = {
@@ -12,19 +11,19 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Restaurant'
-    })
+      title: 'Restaurant',
+    }),
   ],
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
   },
-    module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -38,21 +37,20 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          "style-loader",
+          'style-loader',
           // Translates CSS into CommonJS
-          "css-loader",
+          'css-loader',
           // Compiles Sass to CSS
-          "sass-loader",
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.json5$/i,
         type: 'json',
         parser: {
           parse: json5.parse,
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 };
-
