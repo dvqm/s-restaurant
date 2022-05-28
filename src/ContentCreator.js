@@ -1,0 +1,310 @@
+class ContentCreator {
+  constructor(settings) {
+    this.settings = settings;
+  }
+
+  promoCards() {
+    const cards = {};
+
+    const { data } = this.settings.promo;
+
+    Object.entries(data).map((card) => {
+      const [key, prop] = card;
+
+      const { template } = structuredClone(this.settings.promo);
+
+      const photoWrap = template.c.photoWrap.c;
+
+      const foodPhoto = photoWrap.foodPhoto.d;
+
+      foodPhoto.src = prop.img;
+
+      const discount = photoWrap.discount.d;
+
+      discount.textContent = prop.discount
+        .toString()
+        .concat(discount.textContent);
+
+      const mealName = template.c.mealName.d;
+
+      mealName.textContent = prop.name;
+
+      const timer = template.c.timer.d;
+
+      timer.textContent = prop.time.toString().concat(timer.textContent);
+
+      cards[key] = template;
+      return cards[key];
+    });
+    return cards;
+  }
+
+  popularItems() {
+    const { popularItems } = this.settings;
+
+    const { sliderContent } = structuredClone(
+      popularItems.template.mealSlider.c
+    );
+
+    const cards = popularItems.template.mealSlider;
+
+    cards.c.sliderContent.c = {};
+
+    const { data } = popularItems;
+
+    Object.entries(data).map((card) => {
+      const [key, value] = card;
+
+      const template = structuredClone(sliderContent.c.mealCard);
+
+      const mealPhoto = template.c.mealPhoto.d;
+
+      mealPhoto.src = mealPhoto.src.concat(value.img);
+
+      const mealName = template.c.mealName.d;
+
+      mealName.textContent = value.name;
+
+      const restName = template.c.restName.d;
+
+      restName.textContent = value.restaurant;
+
+      const mealPrice = template.c.mealPrice.d;
+
+      mealPrice.textContent = mealPrice.textContent.concat(
+        value.price.toString()
+      );
+
+      const composition = template.c.composition.d;
+
+      composition.textContent = value.composition;
+
+      cards.c.sliderContent.c[key] = template;
+
+      return cards.c.sliderContent.c[key];
+    });
+
+    const shell = {};
+
+    shell.popularItems = cards;
+
+    return shell;
+  }
+
+  restContent() {
+    const { featuredRestaurants } = this.settings;
+
+    const restContent = structuredClone(
+      featuredRestaurants.template.restContent.c
+    );
+
+    const cards = featuredRestaurants.template.restContent;
+
+    cards.c = {};
+
+    const { data } = featuredRestaurants;
+
+    Object.entries(data).map((card) => {
+      const [key, value] = card;
+
+      const template = structuredClone(restContent.restaurant);
+
+      const mealPict = template.c.mealPict.d;
+
+      mealPict.src = mealPict.src.concat(value.mealPict);
+
+      const discounts = template.c.discounts.d;
+
+      discounts.textContent = discounts.textContent.concat(value.discounts);
+
+      const deliveryRate = template.c.deliveryRate.d;
+
+      deliveryRate.textContent = value.deliveryRate;
+
+      const restLogo = template.c.restLogo.d;
+
+      restLogo.src = restLogo.src.concat(value.logo);
+
+      const restName = template.c.restName.d;
+
+      restName.textContent = value.name;
+
+      const ratings = template.c.ratings.d;
+
+      ratings.textContent = value.ratings;
+
+      const currentState = template.c.currentState.d;
+
+      const [className, textContent] = value.currentState;
+
+      currentState.className = className;
+
+      currentState.textContent = textContent;
+
+      cards.c[key] = template;
+
+      return cards.c[key];
+    });
+    const shell = {};
+
+    shell.featuredRestaurants = cards;
+
+    return shell;
+  }
+
+  menuContent() {
+    const { menuContent } = this.settings;
+
+    const tempWrapper = menuContent.template.c;
+
+    const cards = menuContent.template;
+
+    cards.c = {};
+
+    const { data } = menuContent;
+
+    Object.entries(data).map((card) => {
+      const [key, value] = card;
+
+      const template = structuredClone(tempWrapper.item);
+
+      const mealPict = template.c.mealPict.d;
+
+      mealPict.src = mealPict.src.concat(value.img);
+
+      const name = template.c.name.d;
+
+      name.textContent = value.name;
+
+      cards.c[key] = template;
+
+      return cards.c[key];
+    });
+
+    const shell = {};
+
+    shell.menuContent = cards;
+
+    return shell;
+  }
+
+  footerCities() {
+    const { cityList } = this.settings.footer;
+
+    const tempWrapper = cityList.template.c;
+
+    const cards = cityList.template;
+
+    cards.c = {};
+
+    const { data } = cityList;
+
+    Object.entries(data).map((card) => {
+      const [name, href] = card;
+
+      const template = structuredClone(tempWrapper.link);
+
+      template.d.textContent = name;
+
+      template.d.href = template.d.href.concat(href);
+
+      cards.c[name] = template;
+
+      return cards.c[name];
+    });
+
+    const shell = {};
+
+    shell.cityList = cards;
+
+    return shell;
+  }
+
+  footerMenu() {
+    const { navigation } = this.settings.footer;
+
+    const tempWrapper = navigation.template.c;
+
+    const cards = navigation.template;
+
+    cards.c = {};
+
+    const { data } = navigation;
+
+    Object.entries(data).map((card) => {
+      const [name, value] = card;
+
+      const { division } = structuredClone(tempWrapper);
+
+      const template = division.c;
+
+      template.title.d.textContent = name;
+
+      const subLevel = division;
+
+      subLevel.c = {};
+
+      subLevel.c[name] = template.title;
+
+      Object.entries(value).map((link) => {
+        const [text, href] = link;
+
+        const plate = structuredClone(template.link);
+
+        plate.d.textContent = text;
+
+        plate.d.href = plate.d.href.concat(href);
+
+        subLevel.c[text] = plate;
+
+        return subLevel.c[text];
+      });
+
+      cards.c[name] = division;
+
+      return cards.c[name];
+    });
+
+    const shell = {};
+
+    shell.navigation = cards;
+
+    return shell;
+  }
+
+  footerNetworks() {
+    const { socialNetworks } = this.settings.footer;
+
+    const tempWrapper = socialNetworks.template.c;
+
+    const cards = socialNetworks.template;
+
+    cards.c = {};
+
+    const { data } = socialNetworks;
+
+    Object.entries(data).map((card) => {
+      const [className, href] = card;
+
+      const template = structuredClone(tempWrapper.link);
+
+      template.d.href = template.d.href.concat(href);
+
+      const icon = template.c.networkPict.d;
+
+      icon.className = icon.className.concat(' ', className);
+
+      cards.c[className] = template;
+
+      return cards.c[className];
+    });
+
+    const shell = {};
+
+    shell.footerNetworks = cards;
+
+    return shell;
+  }
+}
+
+export default ContentCreator;
