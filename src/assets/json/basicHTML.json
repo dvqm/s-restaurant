@@ -2,7 +2,7 @@
   "wrapper": {
     "d": {
       "tag": "div",
-      "id": "newContent"
+      "id": "content"
     },
     "c": {
       "topNav": {
