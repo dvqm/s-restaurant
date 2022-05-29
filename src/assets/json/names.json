@@ -1,0 +1,26 @@
+{
+  "topNav": {},
+  "header": {},
+  "promo": {},
+  "popularItems": {
+    "section": "popularItems",
+    "wrapper": "mealSlider",
+    "slider": {
+      "prevBtn": "prevMealBtn",
+      "nextBtn": "nextMealBtn",
+      "wrapper": "sliderContent",
+      "item": "mealCard"
+    }
+  },
+  "featuredRestaurants": {},
+  "menu": {
+    "section": "menu",
+    "slider": {
+      "prevBtn": "categBackBtn",
+      "nextBtn": "categForwBtn",
+      "wrapper": "menuContent",
+      "item": "item"
+    }
+  },
+  "footer": {}
+}
