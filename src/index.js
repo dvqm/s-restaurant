@@ -1,5 +1,6 @@
 import basicHTML from './assets/json/basicHTML.json';
 import UiCreator from './UiCreator';
+import EventCreator from './EventCreator';
 
 // styles
 import './styles/index.scss';
@@ -12,6 +13,10 @@ import './styles/popularItems.scss';
 import './styles/promo.scss';
 import './styles/topNav.scss';
 
-const wrapper = new UiCreator(document.body, basicHTML.wrapper);
+const ui = new UiCreator();
 
-wrapper.render();
+const events = new EventCreator();
+
+const mainPage = events.mainPage(ui.nodeCreate(basicHTML.wrapper));
+
+ui.render(document.body, mainPage);

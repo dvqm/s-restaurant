@@ -72,6 +72,26 @@ class EventCreator {
 
     slidesNum(5, menu, menuSlider);
 
+    const { featuredRestaurants } = names;
+
+    const viewRest = featuredRestaurants.viewRestBtn;
+
+    const viewRestBtn = node.querySelector(`#${viewRest}`);
+
+    viewRestBtn.addEventListener('click', () => {
+      console.log(node.childNodes);
+      node.childNodes.forEach((child, i) => {
+        if (i === 0 || i === 1 || i === node.childNodes.length - 1) {
+          // child.remove();
+          console.log(i, child);
+        } else {
+          console.log(child);
+          child.remove();
+        }
+      });
+      console.log(node.childNodes);
+    });
+
     return node;
   }
 }

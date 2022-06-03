@@ -12,7 +12,9 @@
       "item": "mealCard"
     }
   },
-  "featuredRestaurants": {},
+  "featuredRestaurants": {
+    "viewRestBtn": "viewRest"
+  },
   "menu": {
     "section": "menu",
     "slider": {
