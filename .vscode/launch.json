@@ -5,20 +5,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Canary",
       "type": "chrome",
       "request": "launch",
+      "name": "Vivaldi",
       "url": "http://localhost:8080",
-      "runtimeExecutable": "canary",
-      "webRoot": "${workspaceFolder}"
-    },
-
-    {
-      "type": "pwa-chrome",
-      "request": "launch",
-      "name": "Chrome",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "/usr/bin/vivaldi"
     }
   ]
 }
