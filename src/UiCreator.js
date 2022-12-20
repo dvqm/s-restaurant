@@ -1,60 +1,74 @@
-import contentHTML from './assets/json/contentHTML.json';
-import ContentCreator from './ContentCreator';
-
 class UiCreator {
-  constructor() {}
+  static copy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+  }
 
-  nodeCreate(data) {
-    const details = structuredClone(data);
+  static ref(name, obj) {
+    let result;
 
-    const { tag } = details.d;
+    const nameSearch = (prop) => {
+      if (name in prop) result = prop[name];
 
-    delete details.d.tag;
+      Object.values(prop).forEach((value) => {
+        if (typeof value === 'object') return nameSearch(value);
+        return result;
+      });
+    };
+    nameSearch(obj);
+
+    return result;
+  }
+
+  static preciseInsert(object, successor, key, value) {
+    const newObject = {};
+
+    Object.keys(object).forEach((property) => {
+      if (property === successor) {
+        newObject[key] = value;
+
+        newObject[property] = object[property];
+      } else newObject[property] = object[property];
+    });
+
+    return newObject;
+  }
+
+  static node(data) {
+    if (Object.keys(data).length === 0) return '';
+
+    const element = this.copy(data);
+
+    const { tag } = element;
 
     const parent = document.createElement(tag);
 
-    Object.entries(details.d).forEach((prop) => {
+    Object.entries(element).forEach((prop) => {
       const [key, value] = prop;
 
-      if (key === 'src') {
-        const link = `${value}`;
-
-        parent[key] = require(`./${link}`);
-      } else parent[key] = value;
+      if (key !== 'tag' || key !== 'c' || key !== 's') parent[key] = value;
+      if (key.includes('data-')) parent.setAttribute(key, value);
+      if (key === 'required' && value === 'false') parent.removeAttribute(key);
     });
 
-    if (details.c) {
-      const { c } = details;
+    const blank = this.copy(data);
 
-      Object.entries(c).forEach((node) => {
-        const [key, value] = node;
-        if (key === 'i') {
-          delete c[key];
+    if (blank.c) {
+      const { c } = blank;
 
-          Object.values(value).forEach((func) => {
-            const content = new ContentCreator(contentHTML);
-
-            const nodes = content[func]();
-
-            Object.values(nodes).forEach((element) => {
-              const child = this.nodeCreate(element);
-
-              parent.append(child);
-            });
-          });
-        } else {
-          const child = this.nodeCreate(value);
-
-          parent.append(child);
-        }
+      Object.values(c).forEach((node) => {
+        parent.append(this.node(node));
       });
     }
 
     return parent;
   }
 
-  render(pointer, node) {
-    pointer.append(node);
+  static composer(...handlers) {
+    return [...handlers].reduce((prev, next) => next(prev), {});
+  }
+
+  render(pointer, ...node) {
+    return pointer.append(...node);
   }
 }
 
