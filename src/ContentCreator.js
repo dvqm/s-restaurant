@@ -7,7 +7,128 @@ class ContentCreator extends UiCreator {
     this.settings = settings;
   }
 
-  promoCards() {
+  wrapper() {
+    const content = {
+      tag: 'div',
+      id: 'content',
+    };
+
+    return this.constructor.node(content);
+  }
+
+  topNav() {
+    const content = {
+      tag: 'div',
+      className: 'topNav',
+      c: [
+        {
+          tag: 'img',
+          className: 'logo',
+          src: './assets/logo.png',
+          alt: 'logotype',
+        },
+        {
+          tag: 'label',
+          className: 'address',
+          c: [
+            {
+              tag: 'span',
+              textContent: 'Delivery to: ',
+            },
+            {
+              tag: 'input',
+              type: 'text',
+            },
+          ],
+        },
+        {
+          tag: 'label',
+          className: 'search',
+          c: [
+            {
+              tag: 'input',
+              type: 'text',
+              placeholder: 'Search food',
+            },
+          ],
+        },
+        {
+          tag: 'button',
+          id: 'login',
+          textContent: 'Login',
+        },
+      ],
+    };
+
+    return this.constructor.node(content);
+  }
+
+  header() {
+    const content = {
+      tag: 'div',
+      className: 'header',
+      c: [
+        {
+          tag: 'h2',
+          textContent: 'Are you starving?',
+        },
+        {
+          tag: 'h4',
+          textContent:
+            'Within a few clicks, find meals that are accessible near you',
+        },
+        {
+          tag: 'div',
+          className: 'order',
+          c: [
+            {
+              tag: 'div',
+              className: 'upperPart',
+              c: [
+                {
+                  tag: 'button',
+                  className: 'delivery',
+                  id: 'deliveryBtn',
+                  textContent: 'Delivery',
+                },
+                {
+                  tag: 'button',
+                  className: 'pickup',
+                  id: 'pickupBtn',
+                  textContent: 'Pickup',
+                },
+              ],
+            },
+            {
+              tag: 'div',
+              className: 'lowerPart',
+              c: [
+                {
+                  tag: 'input',
+                  type: 'text',
+                  placeholder: 'Enter your address',
+                },
+                {
+                  tag: 'button',
+                  className: 'findFood',
+                  textContent: 'Find Food',
+                  id: 'findFoodBtn',
+                },
+              ],
+            },
+            {
+              tag: 'div',
+              className: 'headerImg',
+            },
+          ],
+        },
+      ],
+    };
+
+    return this.constructor.node(content);
+  }
+
+  promoMeals() {
     const data = this.settings.promo;
 
     const cards = {
@@ -50,167 +171,230 @@ class ContentCreator extends UiCreator {
     return this.constructor.node(cards);
   }
 
-  popularItems() {
+  popularMeals() {
     const data = this.settings.popularItems;
 
-    const cards = {
+    const content = {
       tag: 'div',
-      className: 'mealSlider',
+      className: 'popularItems',
       c: [
         {
-          tag: 'button',
-          className: 'sliderBtn backward',
-          id: 'prevMealBtn',
+          tag: 'h2',
+          textContent: 'Popular Items',
         },
         {
           tag: 'div',
-          className: 'sliderContent',
-          c: data.map(({ img, name, restaurant, price, composition }) => ({
-            tag: 'div',
-            className: 'mealCard',
-            c: {
-              mealPhoto: {
-                tag: 'img',
-                className: 'mealPhoto',
-                alt: 'Meal picture',
-                src: `assets/meals/${img}`,
-              },
-              mealName: {
-                tag: 'span',
-                className: 'mealName',
-                textContent: name,
-              },
-              restName: {
-                tag: 'span',
-                className: 'restName',
-                textContent: restaurant,
-              },
-              mealPrice: {
-                tag: 'span',
-                className: 'mealPrice',
-                textContent: `$${price}`,
-              },
-              orderBtn: {
-                tag: 'button',
-                id: 'orderNow',
-                textContent: 'Order Now',
-              },
-              composition: {
-                tag: 'p',
-                className: 'composition',
-                textContent: composition,
-              },
+          className: 'mealSlider',
+          c: [
+            {
+              tag: 'button',
+              className: 'sliderBtn backward',
+              id: 'prevMealBtn',
             },
-          })),
-        },
-        {
-          tag: 'button',
-          className: 'sliderBtn forward',
-          id: 'nextMealBtn',
+            {
+              tag: 'div',
+              className: 'sliderContent',
+              c: data.map(({ img, name, restaurant, price, composition }) => ({
+                tag: 'div',
+                className: 'mealCard',
+                c: {
+                  mealPhoto: {
+                    tag: 'img',
+                    className: 'mealPhoto',
+                    alt: 'Meal picture',
+                    src: `assets/meals/${img}`,
+                  },
+                  mealName: {
+                    tag: 'span',
+                    className: 'mealName',
+                    textContent: name,
+                  },
+                  restName: {
+                    tag: 'span',
+                    className: 'restName',
+                    textContent: restaurant,
+                  },
+                  mealPrice: {
+                    tag: 'span',
+                    className: 'mealPrice',
+                    textContent: `$${price}`,
+                  },
+                  orderBtn: {
+                    tag: 'button',
+                    id: 'orderNow',
+                    textContent: 'Order Now',
+                  },
+                  composition: {
+                    tag: 'p',
+                    className: 'composition',
+                    textContent: composition,
+                  },
+                },
+              })),
+            },
+            {
+              tag: 'button',
+              className: 'sliderBtn forward',
+              id: 'nextMealBtn',
+            },
+          ],
         },
       ],
     };
 
-    return this.constructor.node(cards);
+    return this.constructor.node(content);
   }
 
-  restContent() {
+  restaurants() {
     const data = this.settings.featuredRestaurants;
 
-    const cards = {
+    const content = {
       tag: 'div',
-      className: 'restContent',
-      c: data.map(
-        ({
-          mealPict,
-          discounts,
-          deliveryRate,
-          logo,
-          name,
-          restRating,
-          currentState,
-        }) => ({
+      className: 'featuredRestaurants',
+      c: [
+        {
+          tag: 'h2',
+          textContent: 'Featured Restaurants',
+        },
+        {
           tag: 'div',
-          className: 'restaurant',
-          c: [
-            {
-              tag: 'img',
-              src: `assets/meals/${mealPict}`,
-              className: 'mealPict',
-              alt: 'restaurant picture',
-            },
-            {
-              tag: 'span',
-              className: 'discounts',
-              textContent: `${discounts} % off`,
-            },
-            {
-              tag: 'span',
-              className: 'deliveryRate',
-              textContent: deliveryRate,
-            },
-            {
-              tag: 'img',
-              className: 'restLogo',
-              alt: 'Restaurant logo',
-              src: `assets/restaurants/${logo}`,
-            },
-            {
-              tag: 'span',
-              className: 'restName',
-              textContent: name,
-            },
-            {
-              tag: 'span',
-              className: 'ratings',
-              textContent: restRating,
-            },
-            {
-              tag: 'span',
-              className: currentState[0],
-              textContent: currentState[1],
-            },
-          ],
-        }),
-      ),
+          className: 'restContent',
+          c: data.map(
+            ({
+              mealPict,
+              discounts,
+              deliveryRate,
+              logo,
+              name,
+              restRating,
+              currentState,
+            }) => ({
+              tag: 'div',
+              className: 'restaurant',
+              c: [
+                {
+                  tag: 'img',
+                  src: `assets/meals/${mealPict}`,
+                  className: 'mealPict',
+                  alt: 'restaurant picture',
+                },
+                {
+                  tag: 'span',
+                  className: 'discounts',
+                  textContent: `${discounts} % off`,
+                },
+                {
+                  tag: 'span',
+                  className: 'deliveryRate',
+                  textContent: deliveryRate,
+                },
+                {
+                  tag: 'img',
+                  className: 'restLogo',
+                  alt: 'Restaurant logo',
+                  src: `assets/restaurants/${logo}`,
+                },
+                {
+                  tag: 'span',
+                  className: 'restName',
+                  textContent: name,
+                },
+                {
+                  tag: 'span',
+                  className: 'ratings',
+                  textContent: restRating,
+                },
+                {
+                  tag: 'span',
+                  className: currentState[0],
+                  textContent: currentState[1],
+                },
+              ],
+            }),
+          ),
+        },
+        {
+          tag: 'button',
+          id: 'viewRest',
+          className: 'mainBtn',
+          textContent: 'View All >',
+        },
+      ],
     };
-
-    return this.constructor.node(cards);
+    return this.constructor.node(content);
   }
 
-  menuContent() {
+  menu() {
     const data = this.settings.menuContent;
 
-    const cards = {
+    const content = {
       tag: 'div',
-      className: 'menuContent',
-      c: data.map(({ img, name }) => ({
-        tag: 'div',
-        className: 'item',
-        c: {
-          mealPict: {
-            tag: 'img',
-            alt: 'Meal picture',
-            src: `assets/meals/foodCategories/${img}`,
-          },
-          name: {
-            tag: 'span',
-            textContent: name,
-          },
+      className: 'menu',
+      c: [
+        {
+          tag: 'div',
+          className: 'menuLevel2',
+          c: [
+            {
+              tag: 'h2',
+              textContent: 'Search by Food',
+            },
+            {
+              tag: 'div',
+              className: 'menuLevel3',
+              c: [
+                {
+                  tag: 'button',
+                  className: 'secBtn',
+                  id: 'viewAllCategories',
+                  textContent: 'View all >',
+                },
+                {
+                  tag: 'button',
+                  className: 'categoryBtn backward',
+                  id: 'categBackBtn',
+                },
+                {
+                  tag: 'button',
+                  className: 'categoryBtn forward',
+                  id: 'categForwBtn',
+                },
+              ],
+            },
+            {
+              tag: 'div',
+              className: 'menuContent',
+              c: data.map(({ img, name }) => ({
+                tag: 'div',
+                className: 'item',
+                c: {
+                  mealPict: {
+                    tag: 'img',
+                    alt: 'Meal picture',
+                    src: `assets/meals/foodCategories/${img}`,
+                  },
+                  name: {
+                    tag: 'span',
+                    textContent: name,
+                  },
+                },
+              })),
+            },
+          ],
         },
-      })),
+      ],
     };
 
-    return this.constructor.node(cards);
+    return this.constructor.node(content);
   }
 
-  footerCities() {
-    const data = this.settings.footer.cityList;
+  footer() {
+    const data = this.settings.footer;
 
-    const cards = {
+    const cityListSection = {
       tag: 'div',
       className: 'cityList',
-      c: data.map(([name, href]) => ({
+      c: data.cityList.map(([name, href]) => ({
         tag: 'a',
         target: '_self',
         href: `https://${href}`,
@@ -218,59 +402,120 @@ class ContentCreator extends UiCreator {
       })),
     };
 
-    return this.constructor.node(cards);
-  }
-
-  footerMenu() {
-    const data = this.settings.footer.navigation;
-
-    const cards = {
+    const menuSection = {
       tag: 'div',
-      className: 'navigation',
-      c: data.map(({ title, nested }) => ({
-        tag: 'div',
-        className: 'division',
-        c: [
-          {
-            tag: 'h2',
-            textContent: title,
-          },
-          ...nested.map(({ title: name, href }) => ({
-            tag: 'a',
-            href: `https://${href}`,
-            target: '_self',
-            textContent: name,
+      className: 'menuWrap',
+      c: [
+        {
+          tag: 'div',
+          className: 'navigation',
+          c: data.navigation.map(({ title, nested }) => ({
+            tag: 'div',
+            className: 'division',
+            c: [
+              {
+                tag: 'h2',
+                textContent: title,
+              },
+              ...nested.map(({ title: name, href }) => ({
+                tag: 'a',
+                href: `https://${href}`,
+                target: '_self',
+                textContent: name,
+              })),
+            ],
           })),
-        ],
-      })),
-    };
-
-    return this.constructor.node(cards);
-  }
-
-  footerNetworks() {
-    const data = this.settings.footer.socialNetworks;
-
-    const cards = {
-      tag: 'div',
-      className: 'networks',
-      id: 'socialNetworks',
-      c: data.map((card) => {
-        const [className, href] = card;
-        return {
-          tag: 'a',
-          href: `https://${href}`,
-          c: {
-            networkPict: {
-              tag: 'div',
-              className: `socialIcons ${className}`,
+        },
+        {
+          tag: 'div',
+          className: 'contacts',
+          c: [
+            {
+              tag: 'h2',
+              textContent: 'Follow us',
             },
-          },
-        };
-      }),
+            {
+              tag: 'div',
+              className: 'networks',
+              id: 'socialNetworks',
+              c: data.socialNetworks.map((card) => {
+                const [className, href] = card;
+                return {
+                  tag: 'a',
+                  href: `https://${href}`,
+                  c: {
+                    networkPict: {
+                      tag: 'div',
+                      className: `socialIcons ${className}`,
+                    },
+                  },
+                };
+              }),
+            },
+            {
+              tag: 'span',
+              textContent: 'Receive exclusive offers in your mailbox',
+            },
+            {
+              tag: 'div',
+              className: 'mailWrap',
+              c: [
+                {
+                  tag: 'input',
+                  id: 'subscribe',
+                  placeholder: 'Enter your email',
+                },
+                {
+                  tag: 'button',
+                  id: 'subscribe',
+                  textContent: 'Subscribe',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     };
 
-    return this.constructor.node(cards);
+    const creditsSection = {
+      tag: 'div',
+      className: 'credentials',
+      c: [
+        {
+          tag: 'span',
+          textContent: 'All rights Reserved @ Food Company, 2022',
+        },
+        {
+          tag: 'span',
+          textContent: 'Made by me',
+        },
+      ],
+    };
+
+    const content = {
+      tag: 'div',
+      className: 'footer',
+      c: [
+        {
+          tag: 'h2',
+          className: 'footHead',
+          textContent: 'Our Top Cities',
+        },
+        cityListSection,
+        {
+          tag: 'div',
+          className: 'hr',
+        },
+        menuSection,
+        {
+          tag: 'div',
+          className: 'hr',
+        },
+        creditsSection,
+      ],
+    };
+
+    return this.constructor.node(content);
   }
 }
 
