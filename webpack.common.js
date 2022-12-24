@@ -2,63 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const json5 = require('json5');
 
-const minifier = {
-  removeComments: true,
-  collapseWhitespace: true,
-  removeRedundantAttributes: true,
-  useShortDoctype: true,
-  removeEmptyAttributes: true,
-  removeStyleLinkTypeAttributes: true,
-  keepClosingSlash: true,
-  minifyJS: true,
-  minifyCSS: true,
-  minifyURLs: true,
-};
-
 module.exports = {
   entry: {
     index: './src/index.js',
-    restaurants: './src/rest.js',
-    meals: './src/meals.js',
+    underConstruct: './src/underConstruct.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     clean: true,
-    publicPath: '/assets/',
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
-      },
-    },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/assets/templates/index.html',
       title: 'Order your meal!',
-      filename: 'index.html',
-      chunks: ['index', 'vendors'],
-      minify: minifier,
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/assets/templates/rest.html',
-      title: 'All restaurants',
-      filename: 'rest.html',
-      chunks: ['rest', 'vendors'],
-      minify: minifier,
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/assets/templates/meals.html',
-      title: 'All meals',
-      filename: 'meals.html',
-      chunks: ['meals', 'vendors'],
-      minify: minifier,
+      title: 'Under Construction',
+      filename: 'underconstruct.html',
+      chunks: ['underConstruct'],
     }),
   ],
   module: {
