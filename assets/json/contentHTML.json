@@ -1,31 +1,30 @@
 {
   "promo": [
     {
-      "img": "assets/meals/mealImg1.png",
+      "img": "meals/mealImg1.png",
       "discount": 15,
       "name": "tasty meal",
       "time": 6
     },
     {
-      "img": "assets/meals/mealImg2.png",
+      "img": "meals/mealImg2.png",
       "discount": 20,
       "name": "very tasty meal",
       "time": 4
     },
     {
-      "img": "assets/meals/mealImg3.png",
+      "img": "meals/mealImg3.png",
       "discount": 10,
       "name": "tasty meal",
       "time": 10
     },
     {
-      "img": "assets/meals/mealImg4.png",
+      "img": "meals/mealImg4.png",
       "discount": 25,
       "name": "very tasty meal",
       "time": 2
     }
   ],
-
   "popularItems": [
     {
       "img": "cheeseBurger.png",
@@ -105,7 +104,6 @@
       "composition": "The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
     }
   ],
-
   "featuredRestaurants": [
     {
       "mealPict": "mealRest1.png",
@@ -114,7 +112,10 @@
       "logo": "restLogo1.png",
       "name": "Foodworld",
       "restRating": 46,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest2.png",
@@ -123,7 +124,10 @@
       "logo": "restLogo2.png",
       "name": "Pizzahub",
       "restRating": 40,
-      "currentState": ["closed", "Opens tomorrow"]
+      "currentState": [
+        "closed",
+        "Opens tomorrow"
+      ]
     },
     {
       "mealPict": "mealRest3.png",
@@ -132,7 +136,10 @@
       "logo": "restLogo3.png",
       "name": "Donuts hut",
       "restRating": 20,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest4.png",
@@ -141,7 +148,10 @@
       "logo": "restLogo4.png",
       "name": "Donuts hut",
       "restRating": 50,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest5.png",
@@ -150,7 +160,10 @@
       "logo": "restLogo5.png",
       "name": "Ruby Tuesday",
       "restRating": 26,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest6.png",
@@ -159,7 +172,10 @@
       "logo": "restLogo6.png",
       "name": "Kuakata Fried Chicken",
       "restRating": 53,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest7.png",
@@ -168,7 +184,10 @@
       "logo": "restLogo7.png",
       "name": "Red Square",
       "restRating": 45,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     },
     {
       "mealPict": "mealRest8.png",
@@ -177,10 +196,12 @@
       "logo": "restLogo8.png",
       "name": "Taco Bell",
       "restRating": 35,
-      "currentState": ["open", "Open now"]
+      "currentState": [
+        "open",
+        "Open now"
+      ]
     }
   ],
-
   "menuContent": [
     {
       "img": "pizza.png",
@@ -207,66 +228,179 @@
       "name": "Steak"
     }
   ],
-
   "footer": {
     "cityList": [
-      ["San Francisco", "#"],
-      ["Los Angeles", "#"],
-      ["New York City", "#"],
-      ["Chicago", "#"],
-      ["Columbus", "#"],
-      ["Miami", "#"],
-      ["Washington DC", "#"],
-      ["Orange County", "#"],
-      ["Phoenix", "#"],
-      ["New Mexico", "#"],
-      ["San Diego", "#"],
-      ["Seattle", "#"],
-      ["Atlanta", "#"],
-      ["Las Vegas", "#"],
-      ["Albuquerque", "#"],
-      ["East Bay", "#"],
-      ["Portland", "#"],
-      ["Charlotte", "#"],
-      ["Sacramento", "#"],
-      ["Long Beach", "#"],
-      ["Nashville", "#"],
-      ["Denver", "#"],
-      ["Oklahoma City", "#"],
-      ["New Orleans", "#"]
+      [
+        "San Francisco",
+        "/underconstruct.html"
+      ],
+      [
+        "Los Angeles",
+        "/underconstruct.html"
+      ],
+      [
+        "New York City",
+        "/underconstruct.html"
+      ],
+      [
+        "Chicago",
+        "/underconstruct.html"
+      ],
+      [
+        "Columbus",
+        "/underconstruct.html"
+      ],
+      [
+        "Miami",
+        "/underconstruct.html"
+      ],
+      [
+        "Washington DC",
+        "/underconstruct.html"
+      ],
+      [
+        "Orange County",
+        "/underconstruct.html"
+      ],
+      [
+        "Phoenix",
+        "/underconstruct.html"
+      ],
+      [
+        "New Mexico",
+        "/underconstruct.html"
+      ],
+      [
+        "San Diego",
+        "/underconstruct.html"
+      ],
+      [
+        "Seattle",
+        "/underconstruct.html"
+      ],
+      [
+        "Atlanta",
+        "/underconstruct.html"
+      ],
+      [
+        "Las Vegas",
+        "/underconstruct.html"
+      ],
+      [
+        "Albuquerque",
+        "/underconstruct.html"
+      ],
+      [
+        "East Bay",
+        "/underconstruct.html"
+      ],
+      [
+        "Portland",
+        "/underconstruct.html"
+      ],
+      [
+        "Charlotte",
+        "/underconstruct.html"
+      ],
+      [
+        "Sacramento",
+        "/underconstruct.html"
+      ],
+      [
+        "Long Beach",
+        "/underconstruct.html"
+      ],
+      [
+        "Nashville",
+        "/underconstruct.html"
+      ],
+      [
+        "Denver",
+        "/underconstruct.html"
+      ],
+      [
+        "Oklahoma City",
+        "/underconstruct.html"
+      ],
+      [
+        "New Orleans",
+        "/underconstruct.html"
+      ]
     ],
     "navigation": [
       {
         "title": "Company",
         "nested": [
-          { "title": "About us", "href": "#" },
-          { "title": "Team", "href": "#" },
-          { "title": "Careers", "href": "#" },
-          { "title": "Blog", "href": "#" }
+          {
+            "title": "About us",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Team",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Careers",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Blog",
+            "href": "/underconstruct.html"
+          }
         ]
       },
       {
         "title": "Contact",
         "nested": [
-          { "title": "Help & Support", "href": "#" },
-          { "title": "Partner wth us", "href": "#" },
-          { "title": "Ride wth us", "href": "#" }
+          {
+            "title": "Help & Support",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Partner wth us",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Ride wth us",
+            "href": "/underconstruct.html"
+          }
         ]
       },
       {
         "title": "Legal",
         "nested": [
-          { "title": "Terms & Conditions", "href": "#" },
-          { "title": "Refund & Cancellation", "href": "#" },
-          { "title": "Privacy Policy", "href": "#" },
-          { "title": "Cookie Policy", "href": "#" }
+          {
+            "title": "Terms & Conditions",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Refund & Cancellation",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Privacy Policy",
+            "href": "/underconstruct.html"
+          },
+          {
+            "title": "Cookie Policy",
+            "href": "/underconstruct.html"
+          }
         ]
       }
     ],
     "socialNetworks": [
-      ["instagram", "instagram.com"],
-      ["facebook", "facebook.com"],
-      ["twitter", "twitter.com"]
+      [
+        "instagram",
+        "instagram.com"
+      ],
+      [
+        "facebook",
+        "facebook.com"
+      ],
+      [
+        "twitter",
+        "twitter.com"
+      ]
     ]
   }
 }

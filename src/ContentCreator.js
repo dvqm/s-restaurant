@@ -24,7 +24,7 @@ class ContentCreator extends UiCreator {
         {
           tag: 'img',
           className: 'logo',
-          src: './assets/logo.png',
+          src: 'logo.png',
           alt: 'logotype',
         },
         {
@@ -134,7 +134,12 @@ class ContentCreator extends UiCreator {
     const cards = {
       tag: 'div',
       className: 'promo',
-      c: data.map(({ img, discount, name, time }) => ({
+      c: data.map(({
+        img,
+        discount,
+        name,
+        time,
+      }) => ({
         tag: 'div',
         className: 'dealCard',
         c: {
@@ -194,7 +199,14 @@ class ContentCreator extends UiCreator {
             {
               tag: 'div',
               className: 'sliderContent',
-              c: data.map(({ img, name, restaurant, price, composition }) => ({
+              id: 'sliderContent',
+              c: data.map(({
+                img,
+                name,
+                restaurant,
+                price,
+                composition,
+              }) => ({
                 tag: 'div',
                 className: 'mealCard',
                 c: {
@@ -202,7 +214,7 @@ class ContentCreator extends UiCreator {
                     tag: 'img',
                     className: 'mealPhoto',
                     alt: 'Meal picture',
-                    src: `assets/meals/${img}`,
+                    src: `meals/${img}`,
                   },
                   mealName: {
                     tag: 'span',
@@ -221,7 +233,7 @@ class ContentCreator extends UiCreator {
                   },
                   orderBtn: {
                     tag: 'button',
-                    id: 'orderNow',
+                    className: 'orderNow',
                     textContent: 'Order Now',
                   },
                   composition: {
@@ -274,7 +286,7 @@ class ContentCreator extends UiCreator {
               c: [
                 {
                   tag: 'img',
-                  src: `assets/meals/${mealPict}`,
+                  src: `meals/${mealPict}`,
                   className: 'mealPict',
                   alt: 'restaurant picture',
                 },
@@ -292,7 +304,7 @@ class ContentCreator extends UiCreator {
                   tag: 'img',
                   className: 'restLogo',
                   alt: 'Restaurant logo',
-                  src: `assets/restaurants/${logo}`,
+                  src: `restaurants/${logo}`,
                 },
                 {
                   tag: 'span',
@@ -347,31 +359,35 @@ class ContentCreator extends UiCreator {
                   tag: 'button',
                   className: 'secBtn',
                   id: 'viewAllCategories',
-                  textContent: 'View all >',
+                  textContent: 'View All >',
                 },
                 {
                   tag: 'button',
                   className: 'categoryBtn backward',
-                  id: 'categBackBtn',
+                  id: 'categPrevBtn',
                 },
                 {
                   tag: 'button',
                   className: 'categoryBtn forward',
-                  id: 'categForwBtn',
+                  id: 'categNextBtn',
                 },
               ],
             },
             {
               tag: 'div',
               className: 'menuContent',
-              c: data.map(({ img, name }) => ({
+              id: 'menuContent',
+              c: data.map(({
+                img,
+                name,
+              }) => ({
                 tag: 'div',
                 className: 'item',
                 c: {
                   mealPict: {
                     tag: 'img',
                     alt: 'Meal picture',
-                    src: `assets/meals/foodCategories/${img}`,
+                    src: `meals/foodCategories/${img}`,
                   },
                   name: {
                     tag: 'span',
@@ -397,7 +413,7 @@ class ContentCreator extends UiCreator {
       c: data.cityList.map(([name, href]) => ({
         tag: 'a',
         target: '_self',
-        href: `https://${href}`,
+        href: `${href}`,
         textContent: name,
       })),
     };
@@ -409,7 +425,10 @@ class ContentCreator extends UiCreator {
         {
           tag: 'div',
           className: 'navigation',
-          c: data.navigation.map(({ title, nested }) => ({
+          c: data.navigation.map(({
+            title,
+            nested,
+          }) => ({
             tag: 'div',
             className: 'division',
             c: [
@@ -417,9 +436,12 @@ class ContentCreator extends UiCreator {
                 tag: 'h2',
                 textContent: title,
               },
-              ...nested.map(({ title: name, href }) => ({
+              ...nested.map(({
+                title: name,
+                href,
+              }) => ({
                 tag: 'a',
-                href: `https://${href}`,
+                href: `${href}`,
                 target: '_self',
                 textContent: name,
               })),
@@ -512,6 +534,31 @@ class ContentCreator extends UiCreator {
           className: 'hr',
         },
         creditsSection,
+      ],
+    };
+
+    return this.constructor.node(content);
+  }
+
+  notFinished(text = 'This section is under construction. Please check the "View All >" buttons.') {
+    const content = {
+      tag: 'div',
+      className: 'construction',
+      c: [
+        {
+          tag: 'span',
+          textContent: text,
+        },
+        {
+          tag: 'button',
+          id: 'notFinished',
+          textContent: 'Cancel',
+        },
+        {
+          tag: 'div',
+          className: 'backLayer',
+          id: 'backdrop',
+        },
       ],
     };
 
