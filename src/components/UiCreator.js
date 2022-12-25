@@ -19,7 +19,7 @@ class UiCreator {
         if (key !== 'tag' || key !== 'c' || key !== 's') parent[key] = value;
         if (key.includes('data-')) parent.setAttribute(key, value);
         if (key === 'required' && value === 'false') parent.removeAttribute(key);
-        if (key === 'src') parent[key] = require(`../assets/${value}`);
+        if (key === 'src') parent[key] = require(`../../assets/${value}`);
       });
 
     const blank = this.copy(data);
