@@ -1,5 +1,5 @@
-import ContentCreator from './ContentCreator';
-import UiCreator from './UiCreator';
+import ContentCreator from './components/ContentCreator';
+import UiCreator from './components/UiCreator';
 
 const content = new ContentCreator();
 

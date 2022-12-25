@@ -5,6 +5,8 @@ const json5 = require('json5');
 module.exports = {
   entry: {
     index: './src/index.js',
+    rest: './src/rest.js',
+    meals: './src/meals.js',
     underConstruct: './src/underConstruct.js',
   },
   output: {
@@ -16,6 +18,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Order your meal!',
       chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'All Restaurants',
+      filename: 'rest.html',
+      chunks: ['rest'],
+    }),
+    new HtmlWebpackPlugin({
+      title: 'All meals',
+      filename: 'meals.html',
+      chunks: ['meals'],
     }),
     new HtmlWebpackPlugin({
       title: 'Under Construction',
