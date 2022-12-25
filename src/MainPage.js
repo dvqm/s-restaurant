@@ -51,6 +51,11 @@ class MainPage extends UiCreator {
       }],
       [this.events.underConstruction, {
         content: this.content.notFinished(),
+        id: 'findFoodBtn',
+        eventType: 'click',
+      }],
+      [this.events.underConstruction, {
+        content: this.content.notFinished(),
         id: 'orderNow',
         bunch: true,
         eventType: 'click',
