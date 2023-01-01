@@ -6,7 +6,7 @@ import data from '../assets/json/contentHTML.json';
 // styles
 import './styles/index.scss';
 import './styles/common.scss';
-import './styles/featuredRestaurants.scss';
+import './styles/restaurants.scss';
 import './styles/foodCategories.scss';
 import './styles/footer.scss';
 import './styles/header.scss';
@@ -32,7 +32,7 @@ class MainPage extends UiCreator {
       this.content.header(),
       this.content.promoMeals(),
       this.content.popularMeals(),
-      this.content.restaurants(),
+      this.content.restAbbreviated(),
       this.content.menu(),
       this.content.footer(),
     );
@@ -70,6 +70,16 @@ class MainPage extends UiCreator {
         id: 'orderNow',
         bunch: true,
         eventType: 'click',
+      }],
+      [this.events.pageRoute, {
+        id: 'viewRest',
+        eventType: 'click',
+        route: '/rest.html',
+      }],
+      [this.events.pageRoute, {
+        id: 'viewAllCategories',
+        eventType: 'click',
+        route: '/meals.html',
       }],
     );
 
