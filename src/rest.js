@@ -6,7 +6,7 @@ import data from '../assets/json/contentHTML.json';
 // styles
 import './styles/index.scss';
 import './styles/common.scss';
-import './styles/featuredRestaurants.scss';
+import './styles/restaurants.scss';
 import './styles/foodCategories.scss';
 import './styles/footer.scss';
 import './styles/header.scss';
@@ -35,6 +35,10 @@ class Restaurants extends UiCreator {
       this.content.footer(),
     );
 
+    const topNavSearchField = wrapper.querySelector('.search > input');
+
+    topNavSearchField.placeholder = 'Search restaurant';
+
     const orderNowBtnsEvent = [this.events.underConstruction, {
       content: this.content.notFinished(),
       id: 'orderNow',
@@ -54,6 +58,7 @@ class Restaurants extends UiCreator {
       nodesId: 'restContent',
       pageSize: restPageSize,
       nextBtnId: 'nextPage',
+      prevBtnId: 'prevPage',
     }];
 
     const slidersChain = (node) => this.constructor.composer(
