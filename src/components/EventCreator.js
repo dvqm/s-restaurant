@@ -236,6 +236,67 @@ class EventCreator {
 
     return node;
   }
+
+  mealsToggle(node, sets) {
+    const {
+      startFrom,
+      wrapper,
+      selector,
+      eventType,
+    } = sets;
+
+    const meals = node.querySelector(wrapper);
+
+    const mealsClone = meals.cloneNode(true);
+
+    const mealsArray = Array.from(mealsClone.childNodes);
+
+    const categories = node.querySelectorAll(`${selector} button`);
+
+    const categoriesArray = Array.from(categories);
+
+    const toggleCategory = (e) => {
+      categories.forEach((category) => category.disabled = false);
+
+      e.target.disabled = true;
+
+      const i = categoriesArray.findIndex((category) => category.textContent === startFrom);
+
+      const index = categoriesArray.indexOf(e.target) + 1;
+
+      const nextCategory = categories[index] ? categories[index].textContent : -1;
+
+      const startOfCategory = mealsArray
+        .findIndex((header) => header.textContent === e.target.textContent);
+
+      const endOfCategory = mealsArray
+        .findIndex((header) => header.textContent === nextCategory);
+
+      let result;
+
+      if (e.target.textContent === categories[0].textContent) {
+        result = mealsArray.slice(1, mealsArray.length - 1);
+      } else if (nextCategory === -1) {
+        result = mealsArray.slice(startOfCategory, mealsArray.length - 1);
+      } else {
+        result = mealsArray
+          .slice(startOfCategory, endOfCategory);
+      }
+
+      const ribbon = meals.firstChild;
+
+      meals.innerHTML = '';
+
+      meals.append(ribbon);
+
+      result.forEach((meal) => meals.append(meal));
+    };
+
+    categories.forEach((category) => category
+      .addEventListener(eventType, toggleCategory));
+
+    return node;
+  }
 }
 
 export default EventCreator;
