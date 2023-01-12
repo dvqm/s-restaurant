@@ -1,17 +1,14 @@
 import ContentCreator from './components/ContentCreator';
+import UiCreator from './components/UiCreator';
 import EventCreator from './components/EventCreator';
 import data from '../assets/json/contentHTML.json';
 
 import './styles/index.scss';
 import './styles/common.scss';
-import './styles/restaurants.scss';
-import './styles/foodCategories.scss';
-import './styles/footer.scss';
-import './styles/header.scss';
-import './styles/popularItems.scss';
-import './styles/promo.scss';
 import './styles/topNav.scss';
-import UiCreator from './components/UiCreator';
+import './styles/ribbon.scss';
+import './styles/meals.scss';
+import './styles/footer.scss';
 
 class Meals extends UiCreator {
   constructor() {
@@ -61,11 +58,13 @@ class Meals extends UiCreator {
     const categorySwitch = [this.events.mealsToggle, {
       startFrom: category,
       wrapper: '.meals',
-      selector: '.ribbon',
+      header: '.sectionHeader',
+      ribbon: '.ribbon',
       eventType: 'click',
     }];
 
     const eventsChain = (node) => this.constructor.composer(node, categorySwitch);
+
     this.render(document.body, eventsChain(wrapper));
   }
 }

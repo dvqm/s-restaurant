@@ -10,7 +10,7 @@ import './styles/restaurants.scss';
 import './styles/foodCategories.scss';
 import './styles/footer.scss';
 import './styles/header.scss';
-import './styles/popularItems.scss';
+import './styles/meals.scss';
 import './styles/promo.scss';
 import './styles/topNav.scss';
 

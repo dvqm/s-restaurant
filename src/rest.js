@@ -6,13 +6,9 @@ import data from '../assets/json/contentHTML.json';
 // styles
 import './styles/index.scss';
 import './styles/common.scss';
-import './styles/restaurants.scss';
-import './styles/foodCategories.scss';
-import './styles/footer.scss';
-import './styles/header.scss';
-import './styles/popularItems.scss';
-import './styles/promo.scss';
 import './styles/topNav.scss';
+import './styles/restaurants.scss';
+import './styles/footer.scss';
 
 class Restaurants extends UiCreator {
   constructor() {
@@ -54,11 +50,11 @@ class Restaurants extends UiCreator {
 
     const restPaginate = [this.events.pagination, {
       eventType: 'click',
-      id: 'pagination',
-      nodesId: 'restContent',
+      id: '.pagBtns',
+      nodesId: '#restContent',
       pageSize: restPageSize,
-      nextBtnId: 'nextPage',
-      prevBtnId: 'prevPage',
+      nextBtnId: '#nextPage',
+      prevBtnId: '#prevPage',
     }];
 
     const eventsChain = (node) => this.constructor.composer(
