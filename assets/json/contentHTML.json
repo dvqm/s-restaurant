@@ -25,85 +25,6 @@
       "time": 2
     }
   ],
-  "popularItems": [
-    {
-      "img": "cheeseBurger.png",
-      "name": "Cheese Burger",
-      "restaurant": "Burger Arena",
-      "price": 3.88,
-      "composition": "the juiciest aged beef patty, smashed and pushed into the pan for maximum crispy edges, melty American- style cheese on top, a butter-toasted brioche bun, spicy/sweet/sour/crunchy pickles, a riff on a famous sauce from a famous burger from a certain famous American fast food outlet."
-    },
-    {
-      "img": "crispySandwich.png",
-      "name": "Crispy Sandwich",
-      "restaurant": "Fast Food Dine",
-      "price": 3.0,
-      "composition": "12 slices of sandwich bread, 8 slices of chicken, 4 tomatoes, 16 slices of bacon, lettuce, mayonnaise, butter, 8 slices of edamer"
-    },
-    {
-      "img": "dancake.png",
-      "name": "Dancake",
-      "restaurant": "Cake World",
-      "price": 1.99,
-      "composition": "Sugar, WHEAT flour, EGGS, vegetable oil (canola), water, vegetable fat (coconut and palm), humectant (glycerol), modified STARCH, glucose-fructose syrup, 1.4% low fat cocoa powder, emulsifiers (mono- and diglycerides of fatty acids."
-    },
-    {
-      "img": "thaiSoup.png",
-      "name": "Thai Soup",
-      "restaurant": "Foody man",
-      "price": 2.79,
-      "composition": "Authentic, bold, and delicious Thai flavors make this soup irresistible! This is the best Thai coconut soup I've had. You won't be disappointed with this one! Serve over steamed rice."
-    },
-    {
-      "img": "toffesCake.png",
-      "name": "Toffe’s Cake",
-      "restaurant": "Top Sticks",
-      "price": 4.5,
-      "composition": "So, January. Here we go again. The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
-    },
-    {
-      "img": "cheeseBurger.png",
-      "name": "meal6",
-      "restaurant": "Burger Arena",
-      "price": 10.2,
-      "composition": "the juiciest aged beef patty, smashed and pushed into the pan for maximum crispy edges, melty American- style cheese on top, a butter-toasted brioche bun, spicy/sweet/sour/crunchy pickles, a riff on a famous sauce from a famous burger from a certain famous American fast food outlet."
-    },
-    {
-      "img": "crispySandwich.png",
-      "name": "meal7",
-      "restaurant": "Fast Food Dine",
-      "price": 6.0,
-      "composition": "10 slices of sandwich bread, 8 slices of chicken, 4 tomatoes, 16 slices of bacon, lettuce, mayonnaise, butter, 8 slices of edamer"
-    },
-    {
-      "img": "dancake.png",
-      "name": "Tasty meal",
-      "restaurant": "Cake World",
-      "price": 3.99,
-      "composition": "Sugar, WHEAT flour, EGGS, vegetable oil (canola), water, vegetable fat (coconut and palm), humectant (glycerol), modified STARCH, glucose-fructose syrup, 1.4% low fat cocoa powder, emulsifiers (mono- and diglycerides of fatty acids."
-    },
-    {
-      "img": "thaiSoup.png",
-      "name": "meal9",
-      "restaurant": "Foody man",
-      "price": 2.99,
-      "composition": "Authentic, bold, and delicious Thai flavors make this soup irresistible! This is the best Thai coconut soup I've had. You won't be disappointed with this one! Serve over steamed rice."
-    },
-    {
-      "img": "toffesCake.png",
-      "name": "meal10",
-      "restaurant": "Top Sticks",
-      "price": 3.0,
-      "composition": "The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
-    },
-    {
-      "img": "toffesCake.png",
-      "name": "meal10",
-      "restaurant": "Top Sticks",
-      "price": 3.0,
-      "composition": "The time of year when gym memberships go up and the diet police come out, full-throttle, wiggling about in leotards and wagging their bony fingers at us, stirring up shame and dishing up huge dollops of self-disgust. "
-    }
-  ],
   "restaurants": [
     {
       "id": 1,
@@ -1765,32 +1686,14 @@
       ]
     }
   ],
-  "menuContent": [
-    {
-      "img": "pizza.png",
-      "name": "Pizza"
-    },
-    {
-      "img": "burger.png",
-      "name": "Burger"
-    },
-    {
-      "img": "noodles.png",
-      "name": "Noodles"
-    },
-    {
-      "img": "subSandwich.png",
-      "name": "Sub-sandwich"
-    },
-    {
-      "img": "chowmein.png",
-      "name": "Chowmein"
-    },
-    {
-      "img": "steak.png",
-      "name": "Steak"
-    }
-  ],
+  "categoriesContent": {
+    "pizza": "pizza.png",
+    "burger": "burger.png",
+    "noodles": "noodles.png",
+    "sub-sandwich": "subSandwich.png",
+    "chowmein": "chowmein.png",
+    "steak": "steak.png"
+  },
   "footer": {
     "cityList": [
       [
@@ -1969,242 +1872,360 @@
   "menu": [
     {
       "id": 1,
+      "featured": true,
+      "img": "cheeseBurger.png",
+      "section": "burger",
+      "labels": [
+        "beef",
+        "American"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 388
+        },
+        {
+          "id": 7,
+          "price": 398
+        },
+        {
+          "id": 15,
+          "price": 420
+        }
+      ],
+      "name": "Cheese Burger",
+      "description": "Juicy aged beef patty on a butter-toasted brioche bun. Melty American-style cheese and pickles for added flavor. Perfect for burger lovers!"
+    },
+    {
+      "id": 2,
+      "featured": true,
+      "img": "crispySandwich.png",
+      "section": "sub-sandwich",
+      "labels": [
+        "chicken",
+        "bacon"
+      ],
+      "restaurant": [
+        {
+          "id": 2,
+          "price": 300
+        },
+        {
+          "id": 9,
+          "price": 325
+        },
+        {
+          "id": 13,
+          "price": 290
+        },
+        {
+          "id": 18,
+          "price": 315
+        }
+      ],
+      "name": "Crispy Sandwich",
+      "description": "Loaded with crispy chicken, bacon, tomatoes, and cheese on soft sandwich bread. Perfectly balanced with lettuce and mayonnaise. A crispy and delicious sandwich."
+    },
+    {
+      "id": 3,
+      "featured": true,
+      "img": "dancake.png",
+      "section": "cakes",
+      "labels": [
+        "chocolate"
+      ],
+      "restaurant": [
+        {
+          "id": 3,
+          "price": 199
+        },
+        {
+          "id": 12,
+          "price": 210
+        },
+        {
+          "id": 16,
+          "price": 220
+        }
+      ],
+      "name": "Dancake",
+      "description": "Chocolate cake with rich cocoa flavor. Moist and fluffy texture. Decorated with chocolate glaze and sprinkles"
+    },
+    {
+      "id": 4,
+      "featured": true,
+      "img": "thaiSoup.png",
+      "section": "soups",
+      "labels": [
+        "coconut",
+        "spicy",
+        "Thai"
+      ],
+      "restaurant": [
+        {
+          "id": 4,
+          "price": 279
+        },
+        {
+          "id": 6,
+          "price": 285
+        },
+        {
+          "id": 14,
+          "price": 299
+        }
+      ],
+      "name": "Thai Soup",
+      "description": "Authentic Thai flavors with a blend of coconut milk and spices. A perfect balance of sweet and spicy. Served with steamed rice for a complete meal."
+    },
+    {
+      "id": 5,
+      "featured": true,
+      "img": "toffesCake.png",
+      "section": "cakes",
+      "labels": [
+        "caramel"
+      ],
+      "restaurant": [
+        {
+          "id": 5,
+          "price": 450
+        },
+        {
+          "id": 10,
+          "price": 480
+        },
+        {
+          "id": 17,
+          "price": 470
+        },
+        {
+          "id": 19,
+          "price": 460
+        }
+      ],
+      "name": "Toffe’s Cake",
+      "description": "A cake with a rich toffee flavor and a moist texture. Decorated with caramel glaze and chocolate shavings. Perfect for those who love sweet desserts."
+    },
+    {
+      "id": 6,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        },
+        {
+          "id": 8,
+          "price": 215
+        },
+        {
+          "id": 11,
+          "price": 205
+        }
+      ],
       "name": "Margarita",
-      "composition": "The Margarita pizza is a classic Italian dish made with a crispy crust, topped with tomato sauce, mozzarella cheese, and fresh basil. This simple yet delicious pizza is perfect for those looking for a taste of Italy in every bite. Enjoy this classic pizza on its own or customize it with your choice of toppings."
+      "description": "The Margarita pizza is a classic Italian dish made with a crispy crust, topped with tomato sauce, mozzarella cheese, and fresh basil. This simple yet delicious pizza is perfect for those looking for a taste of Italy in every bite. Enjoy this classic pizza on its own or customize it with your choice of toppings."
     },
     {
-      "id": 2,
+      "id": 7,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "vegetarian",
         "gluten-free"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 205
-      }],
-      "name": "Veggie Delight",
-      "composition": "The Veggie Delight pizza is a flavorful and healthy option, made with a gluten-free crust and topped with a variety of fresh vegetables including bell peppers, onions, mushrooms, and cherry tomatoes. The pizza is finished with a sprinkle of feta cheese and a drizzle of olive oil."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 205
+        },
+        {
+          "id": 5,
+          "price": 220
+        },
+        {
+          "id": 20,
+          "price": 215
+        }
+      ],
+      "name": "Vegetarian Pizza",
+      "description": "A delicious and healthy option for vegetarians, this pizza is made with a gluten-free crust and topped with a variety of fresh vegetables. Perfect for those looking for a tasty and nutritious meal."
     },
     {
-      "id": 3,
+      "id": 8,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "spicy"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Pepperoni Inferno",
-      "composition": "The Pepperoni Inferno pizza is not for the faint of heart! This spicy pie is loaded with spicy pepperoni, jalapeno peppers, and a spicy tomato sauce. The pizza is finished with a generous helping of melted mozzarella cheese and a sprinkle of red pepper flakes for an extra kick."
+      "description": "The Pepperoni Inferno pizza is not for the faint of heart! This spicy pie is loaded with spicy pepperoni, jalapeno peppers, and a spicy tomato sauce. The pizza is finished with a generous helping of melted mozzarella cheese and a sprinkle of red pepper flakes for an extra kick."
     },
     {
-      "id": 4,
+      "id": 9,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "meat-lover"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Meat Lovers",
-      "composition": "The Meat Lovers pizza is a carnivore's dream, with a generous helping of pepperoni, sausage, ham, and bacon. This pizza is sure to satisfy even the heartiest of appetites and is finished with a layer of melted mozzarella cheese."
+      "description": "The Meat Lovers pizza is a carnivore's dream, with a generous helping of pepperoni, sausage, ham, and bacon. This pizza is sure to satisfy even the heartiest of appetites and is finished with a layer of melted mozzarella cheese."
     },
     {
-      "id": 5,
+      "id": 10,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Eggplant Parmesan",
-      "composition": "The Eggplant Parmesan pizza is a delicious vegetarian option, made with a thin crust and topped with sliced eggplant, marinara sauce, and mozzarella cheese. The pizza is finished with a sprinkle of parmesan cheese and a sprinkle of fresh basil."
+      "description": "The Eggplant Parmesan pizza is a delicious vegetarian option, made with a thin crust and topped with sliced eggplant, marinara sauce, and mozzarella cheese. The pizza is finished with a sprinkle of parmesan cheese and a sprinkle of fresh basil."
     },
     {
-      "id": 6,
+      "id": 11,
+      "featured": true,
       "img": "mealPlaceholder.png",
       "section": "pizza",
       "labels": [
         "vegan"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Vegan Delight",
-      "composition": "The Vegan Delight pizza is a plant-based option made with a vegan crust and topped with marinara sauce, roasted vegetables, and vegan cheese. This pizza is a tasty and satisfying option for those following a vegan diet."
-    },
-    {
-      "id": 7,
-      "img": "mealPlaceholder.png",
-      "section": "pizza",
-      "labels": [
-        "gluten-free"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Gluten-Free BBQ Chicken",
-      "composition": "The Gluten-Free BBQ Chicken pizza is a delicious and gluten-free option, made with a gluten-free crust and topped with BBQ sauce, grilled chicken, onions, and mozzarella cheese. The pizza is finished with a sprinkle of cilantro for a fresh and flavorful twist."
-    },
-    {
-      "id": 8,
-      "img": "mealPlaceholder.png",
-      "section": "pizza",
-      "labels": [
-        "vegetarian"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Greek Salad",
-      "composition": "The Greek Salad pizza is a unique twist on a classic salad, made with a thin crust and topped with tomato sauce, feta cheese, olives, red onions, and bell peppers. The pizza is finished with a drizzle of olive oil and a sprinkle of fresh basil."
-    },
-    {
-      "id": 9,
-      "img": "mealPlaceholder.png",
-      "section": "pizza",
-      "labels": [
-        "meat-lover"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Hawaiian",
-      "composition": "The Hawaiian pizza is a tropical twist on a classic, made with a crispy crust and topped with tomato sauce, pineapple, ham, and mozzarella cheese. This pizza is a sweet and savory combination that is sure to be a hit with everyone."
-    },
-    {
-      "id": 10,
-      "img": "mealPlaceholder.png",
-      "section": "pizza",
-      "labels": [
-        "vegetarian"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Mushroom and Truffle Oil",
-      "composition": "The Mushroom and Truffle Oil pizza is a sophisticated and flavorful option, made with a thin crust and topped with a variety of mushrooms, truffle oil, and a sprinkle of parmesan cheese. This pizza is perfect for those looking for something a little more gourmet."
-    },
-    {
-      "id": 11,
-      "img": "mealPlaceholder.png",
-      "section": "pizza",
-      "labels": [
-        "vegetarian"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Roasted Vegetable",
-      "composition": "The Roasted Vegetable pizza is a healthy and delicious option, made with a thin crust and topped with roasted vegetables, pesto sauce, and a sprinkle of feta cheese. This pizza is a great choice for those looking for a lighter option."
+      "description": "The Vegan Delight pizza is a plant-based option made with a vegan crust and topped with marinara sauce, roasted vegetables, and vegan cheese. This pizza is a tasty and satisfying option for those following a vegan diet."
     },
     {
       "id": 12,
+      "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "burger",
-      "labels": [
-        "vegetarian"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Black Bean Burger",
-      "composition": "The Black Bean Burger is a vegetarian option made with a black bean patty, topped with lettuce, tomato, onion, and avocado. The burger is served on a toasted bun with a side of chips."
-    },
-    {
-      "id": 13,
-      "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "pizza",
       "labels": [
         "gluten-free"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Bison Burger",
-      "composition": "The Bison Burger is a hearty and flavorful option made with a bison patty, topped with lettuce, tomato, onion, and cheddar cheese. The burger is served on a gluten-free bun with a side of sweet potato fries."
-    },
-    {
-      "id": 14,
-      "img": "mealPlaceholder.png",
-      "section": "burger",
-      "labels": [
-        "spicy"
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Jalapeno Burger",
-      "composition": "The Jalapeno Burger is a spicy option made with a beef patty, topped with jalapeno peppers, pepper jack cheese, and a spicy mayo sauce. The burger is served on a toasted bun with a side of fries."
+      "name": "Gluten-Free BBQ Chicken",
+      "description": "The Gluten-Free BBQ Chicken pizza is a delicious and gluten-free option, made with a gluten-free crust and topped with BBQ sauce, grilled chicken, onions, and mozzarella cheese. The pizza is finished with a sprinkle of cilantro for a fresh and flavorful twist."
     },
     {
-      "id": 15,
+      "id": 13,
+      "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "burger",
-      "labels": [
-        "meat-lover"
-      ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Double Cheeseburger",
-      "composition": "The Double Cheeseburger is a classic option made with two beef patties, topped with lettuce, tomato, onion, and two slices of cheese. The burger is served on a toasted bun with a side of fries."
-    },
-    {
-      "id": 16,
-      "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "pizza",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Portobello Mushroom Burger",
-      "composition": "The Portobello Mushroom Burger is a vegetarian option made with a grilled portobello mushroom, topped with lettuce, tomato, onion, and avocado. The burger is served on a toasted bun with a side of sweet potato fries."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Greek Salad",
+      "description": "The Greek Salad pizza is a unique twist on a classic salad, made with a thin crust and topped with tomato sauce, feta cheese, olives, red onions, and bell peppers. The pizza is finished with a drizzle of olive oil and a sprinkle of fresh basil."
+    },
+    {
+      "id": 14,
+      "featured": true,
+      "img": "mealPlaceholder.png",
+      "section": "pizza",
+      "labels": [
+        "meat-lover"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Hawaiian",
+      "description": "The Hawaiian pizza is a tropical twist on a classic, made with a crispy crust and topped with tomato sauce, pineapple, ham, and mozzarella cheese. This pizza is a sweet and savory combination that is sure to be a hit with everyone."
+    },
+    {
+      "id": 15,
+      "featured": true,
+      "img": "mealPlaceholder.png",
+      "section": "pizza",
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Mushroom and Truffle Oil",
+      "description": "The Mushroom and Truffle Oil pizza is a sophisticated and flavorful option, made with a thin crust and topped with a variety of mushrooms, truffle oil, and a sprinkle of parmesan cheese. This pizza is perfect for those looking for something a little more gourmet."
+    },
+    {
+      "id": 16,
+      "featured": true,
+      "img": "mealPlaceholder.png",
+      "section": "pizza",
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Roasted Vegetable",
+      "description": "The Roasted Vegetable pizza is a healthy and delicious option, made with a thin crust and topped with roasted vegetables, pesto sauce, and a sprinkle of feta cheese. This pizza is a great choice for those looking for a lighter option."
     },
     {
       "id": 17,
       "img": "mealPlaceholder.png",
       "section": "burger",
       "labels": [
-        "vegan"
+        "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Vegan Burger",
-      "composition": "The Vegan Burger is a plant-based option made with a vegan patty, topped with lettuce, tomato, onion, and vegan cheese. The burger is served on a toasted bun with a side of chips."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Black Bean Burger",
+      "description": "The Black Bean Burger is a vegetarian option made with a black bean patty, topped with lettuce, tomato, onion, and avocado. The burger is served on a toasted bun with a side of chips."
     },
     {
       "id": 18,
@@ -2213,188 +2234,474 @@
       "labels": [
         "gluten-free"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Turkey Burger",
-      "composition": "The Turkey Burger is a healthy option made with a turkey patty, topped with lettuce, tomato, onion, and avocado. The burger is served on a gluten-free bun with a side of sweet potato fries."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Bison Burger",
+      "description": "The Bison Burger is a hearty and flavorful option made with a bison patty, topped with lettuce, tomato, onion, and cheddar cheese. The burger is served on a gluten-free bun with a side of sweet potato fries."
     },
     {
       "id": 19,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "burger",
       "labels": [
-        "vegetarian"
+        "spicy"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Veggie Delight",
-      "composition": "The Veggie Delight sub-sandwich is a flavorful and healthy option, made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and cherry tomatoes. The sandwich is finished with a sprinkle of feta cheese and a drizzle of olive oil."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Jalapeno Burger",
+      "description": "The Jalapeno Burger is a spicy option made with a beef patty, topped with jalapeno peppers, pepper jack cheese, and a spicy mayo sauce. The burger is served on a toasted bun with a side of fries."
     },
     {
       "id": 20,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "burger",
       "labels": [
         "meat-lover"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Italian Cold Cut",
-      "composition": "The Italian Cold Cut sub-sandwich is a classic option made with a variety of Italian meats including salami, ham, and pepperoni. The sandwich is finished with lettuce, tomato, onion, and a drizzle of Italian dressing."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Double Cheeseburger",
+      "description": "The Double Cheeseburger is a classic option made with two beef patties, topped with lettuce, tomato, onion, and two slices of cheese. The burger is served on a toasted bun with a side of fries."
     },
     {
       "id": 21,
       "img": "mealPlaceholder.png",
+      "section": "burger",
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Portobello Mushroom Burger",
+      "description": "The Portobello Mushroom Burger is a vegetarian option made with a grilled portobello mushroom, topped with lettuce, tomato, onion, and avocado. The burger is served on a toasted bun with a side of sweet potato fries."
+    },
+    {
+      "id": 22,
+      "img": "mealPlaceholder.png",
+      "section": "burger",
+      "labels": [
+        "vegan"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Vegan Burger",
+      "description": "The Vegan Burger is a plant-based option made with a vegan patty, topped with lettuce, tomato, onion, and vegan cheese. The burger is served on a toasted bun with a side of chips."
+    },
+    {
+      "id": 23,
+      "img": "mealPlaceholder.png",
+      "section": "burger",
+      "labels": [
+        "gluten-free"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Turkey Burger",
+      "description": "The Turkey Burger is a healthy option made with a turkey patty, topped with lettuce, tomato, onion, and avocado. The burger is served on a gluten-free bun with a side of sweet potato fries."
+    },
+    {
+      "id": 24,
+      "img": "mealPlaceholder.png",
       "section": "sub-sandwich",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
-      "name": "Eggplant Parmesan",
-      "composition": "The Eggplant Parmesan sub-sandwich is a delicious vegetarian option, made with sliced eggplant, marinara sauce, and mozzarella cheese. The sandwich is finished with a sprinkle of parmesan cheese and a sprinkle of fresh basil."
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Veggie Delight",
+      "description": "The Veggie Delight sub-sandwich is a flavorful and healthy option, made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and cherry tomatoes. The sandwich is finished with a sprinkle of feta cheese and a drizzle of olive oil."
     },
     {
-      "id": 22,
+      "id": 25,
+      "img": "mealPlaceholder.png",
+      "section": "sub-sandwich",
+      "labels": [
+        "meat-lover"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Italian Cold Cut",
+      "description": "The Italian Cold Cut sub-sandwich is a classic option made with a variety of Italian meats including salami, ham, and pepperoni. The sandwich is finished with lettuce, tomato, onion, and a drizzle of Italian dressing."
+    },
+    {
+      "id": 26,
+      "img": "mealPlaceholder.png",
+      "section": "sub-sandwich",
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
+      "name": "Eggplant Parmesan",
+      "description": "The Eggplant Parmesan sub-sandwich is a delicious vegetarian option, made with sliced eggplant, marinara sauce, and mozzarella cheese. The sandwich is finished with a sprinkle of parmesan cheese and a sprinkle of fresh basil."
+    },
+    {
+      "id": 27,
       "img": "mealPlaceholder.png",
       "section": "sub-sandwich",
       "labels": [
         "vegan"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Vegan Delight",
-      "composition": "The Vegan Delight sub-sandwich is a plant-based option made with roasted vegetables, vegan cheese, and a variety of greens. The sandwich is finished with a drizzle of vegan mayo and a sprinkle of herbs."
+      "description": "The Vegan Delight sub-sandwich is a plant-based option made with roasted vegetables, vegan cheese, and a variety of greens. The sandwich is finished with a drizzle of vegan mayo and a sprinkle of herbs."
     },
     {
-      "id": 23,
+      "id": 28,
       "img": "mealPlaceholder.png",
       "section": "sub-sandwich",
       "labels": [
         "gluten-free"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Gluten-Free BBQ Chicken",
-      "composition": "The Gluten-Free BBQ Chicken sub-sandwich is a delicious and gluten-free option, made with grilled chicken, BBQ sauce, onions, and a sprinkle of cilantro. The sandwich is served on a gluten-free bun with a side of chips."
+      "description": "The Gluten-Free BBQ Chicken sub-sandwich is a delicious and gluten-free option, made with grilled chicken, BBQ sauce, onions, and a sprinkle of cilantro. The sandwich is served on a gluten-free bun with a side of chips."
     },
     {
-      "id": 24,
+      "id": 29,
       "img": "mealPlaceholder.png",
       "section": "noodles",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Veggie Lo Mein",
-      "composition": "The Veggie Lo Mein is a flavorful and healthy option made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and broccoli. The noodles are tossed in a savory sauce and served with a side of steamed rice."
+      "description": "The Veggie Lo Mein is a flavorful and healthy option made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and broccoli. The noodles are tossed in a savory sauce and served with a side of steamed rice."
     },
     {
-      "id": 25,
+      "id": 30,
       "img": "mealPlaceholder.png",
       "section": "noodles",
       "labels": [
         "meat-lover"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Beef and Broccoli",
-      "composition": "The Beef and Broccoli noodles are a classic and hearty option made with tender slices of beef and fresh broccoli florets. The noodles are tossed in a savory sauce and served with a side of steamed rice."
+      "description": "The Beef and Broccoli noodles are a classic and hearty option made with tender slices of beef and fresh broccoli florets. The noodles are tossed in a savory sauce and served with a side of steamed rice."
     },
     {
-      "id": 26,
+      "id": 31,
       "img": "mealPlaceholder.png",
       "section": "noodles",
       "labels": [
         "vegetarian"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Thai Peanut Noodles",
-      "composition": "The Thai Peanut Noodles are a flavorful and unique option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a creamy peanut sauce and served with a side of steamed rice."
+      "description": "The Thai Peanut Noodles are a flavorful and unique option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a creamy peanut sauce and served with a side of steamed rice."
     },
     {
-      "id": 27,
+      "id": 32,
       "img": "mealPlaceholder.png",
       "section": "noodles",
       "labels": [
         "vegan"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Vegan Pad Thai",
-      "composition": "The Vegan Pad Thai noodles are a plant-based and flavorful option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a savory and sweet sauce and served with a side of steamed rice."
+      "description": "The Vegan Pad Thai noodles are a plant-based and flavorful option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a savory and sweet sauce and served with a side of steamed rice."
     },
     {
-      "id": 28,
+      "id": 33,
       "img": "mealPlaceholder.png",
       "section": "noodles",
       "labels": [
         "gluten-free"
       ],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Gluten-Free Sesame Noodles",
-      "composition": "The Gluten-Free Sesame Noodles are a delicious and gluten-free option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a savory sesame sauce and served with a side of steamed rice."
+      "description": "The Gluten-Free Sesame Noodles are a delicious and gluten-free option made with thin rice noodles and a variety of vegetables. The noodles are tossed in a savory sesame sauce and served with a side of steamed rice."
     },
     {
-      "id": 29,
+      "id": 34,
       "img": "mealPlaceholder.png",
       "section": "chowmein",
-      "labels": ["vegetarian"],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Veggie Chowmein",
-      "composition": "The Veggie Chowmein is a flavorful and healthy option made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and broccoli. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
+      "description": "The Veggie Chowmein is a flavorful and healthy option made with a variety of fresh vegetables including bell peppers, onions, mushrooms, and broccoli. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
     },
     {
-      "id": 30,
+      "id": 35,
       "img": "mealPlaceholder.png",
       "section": "chowmein",
-      "labels": ["meat-lover"],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "labels": [
+        "meat-lover"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Beef Chowmein",
-      "composition": "The Beef Chowmein is a hearty and flavorful option made with tender slices of beef and fresh vegetables. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
+      "description": "The Beef Chowmein is a hearty and flavorful option made with tender slices of beef and fresh vegetables. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
     },
     {
-      "id": 31,
+      "id": 36,
       "img": "mealPlaceholder.png",
       "section": "chowmein",
-      "labels": ["vegetarian"],
-      "restaurant": [{
-        "id": 1,
-        "price": 199
-      }],
+      "labels": [
+        "vegetarian"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 199
+        }
+      ],
       "name": "Tofu Chowmein",
-      "composition": "The Tofu Chowmein is a vegetarian and protein-packed option made with tofu and a variety of vegetables. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
+      "description": "The Tofu Chowmein is a vegetarian and protein-packed option made with tofu and a variety of vegetables. The noodles are stir-fried in a savory sauce and served with a side of steamed rice."
+    },
+    {
+      "id": 37,
+      "img": "mealPlaceholder.png",
+      "section": "steak",
+      "labels": [
+        "beef"
+      ],
+      "restaurant": [
+        {
+          "id": 1,
+          "price": 2499
+        }
+      ],
+      "name": "Ribeye Steak",
+      "description": "A classic, juicy and tender ribeye steak, cooked to perfection. This steak is known for its rich, beefy flavor and is often considered the king of steaks."
+    },
+    {
+      "id": 38,
+      "img": "mealPlaceholder.png",
+      "section": "steak",
+      "labels": [
+        "beef"
+      ],
+      "restaurant": [
+        {
+          "id": 2,
+          "price": 3499
+        }
+      ],
+      "name": "Filet Mignon",
+      "description": "A tender and succulent cut of beef, the filet mignon is often considered the most luxurious of steaks. Perfectly cooked, it makes for a melt-in-your-mouth dining experience."
+    },
+    {
+      "id": 39,
+      "img": "mealPlaceholder.png",
+      "section": "steak",
+      "labels": [
+        "beef"
+      ],
+      "restaurant": [
+        {
+          "id": 3,
+          "price": 4499
+        }
+      ],
+      "name": "Porterhouse Steak",
+      "description": "The porterhouse steak is a generous cut of beef that includes a tender filet mignon and a flavorful strip steak. Perfectly cooked, this steak offers a range of textures and tastes."
+    },
+    {
+      "id": 40,
+      "img": "mealPlaceholder.png",
+      "section": "steak",
+      "labels": [
+        "beef"
+      ],
+      "restaurant": [
+        {
+          "id": 4,
+          "price": 2999
+        }
+      ],
+      "name": "Tenderloin Steak",
+      "description": "The tenderloin steak is a lean cut of beef that is known for its tenderness. Cooked to perfection, this steak makes for a deliciously satisfying meal."
+    },
+    {
+      "id": 41,
+      "img": "mealPlaceholder.png",
+      "section": "steak",
+      "labels": [
+        "beef"
+      ],
+      "restaurant": [
+        {
+          "id": 5,
+          "price": 1999
+        }
+      ],
+      "name": "Sirloin Steak",
+      "description": "The sirloin steak is a flavorful cut of beef that is known for its rich taste. Cooked to perfection, this steak is perfect for those looking for a satisfying, hearty meal."
+    },
+    {
+      "id": 42,
+      "img": "mealPlaceholder.png",
+      "section": "salads",
+      "labels": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "restaurant": [
+        {
+          "id": 2,
+          "price": 499
+        },
+        {
+          "id": 8,
+          "price": 599
+        }
+      ],
+      "name": "Caprese Salad",
+      "description": "The Caprese Salad is a classic Italian dish made with fresh mozzarella cheese, juicy tomatoes, and fragrant basil leaves. It is drizzled with a balsamic glaze and extra virgin olive oil."
+    },
+    {
+      "id": 43,
+      "img": "mealPlaceholder.png",
+      "section": "salads",
+      "labels": [
+        "vegan",
+        "gluten-free"
+      ],
+      "restaurant": [
+        {
+          "id": 4,
+          "price": 399
+        },
+        {
+          "id": 17,
+          "price": 499
+        },
+        {
+          "id": 20,
+          "price": 599
+        }
+      ],
+      "name": "Quinoa Salad",
+      "description": "The Quinoa Salad is a healthy and hearty option made with cooked quinoa, mixed greens, and a variety of vegetables. It is topped with a citrus vinaigrette and served with a side of avocado."
+    },
+    {
+      "id": 44,
+      "img": "mealPlaceholder.png",
+      "section": "salads",
+      "labels": [
+        "vegetarian",
+        "gluten-free"
+      ],
+      "restaurant": [
+        {
+          "id": 3,
+          "price": 499
+        },
+        {
+          "id": 9,
+          "price": 599
+        }
+      ],
+      "name": "Greek Salad",
+      "description": "The Greek Salad is a classic Mediterranean dish made with ripe tomatoes, cucumbers, red onion, and feta cheese. It is topped with kalamata olives and a tangy lemon vinaigrette."
+    },
+    {
+      "id": 45,
+      "img": "mealPlaceholder.png",
+      "section": "salads",
+      "labels": [
+        "vegan",
+        "gluten-free"
+      ],
+      "restaurant": [
+        {
+          "id": 7,
+          "price": 399
+        },
+        {
+          "id": 12,
+          "price": 499
+        },
+        {
+          "id": 20,
+          "price": 599
+        }
+      ],
+      "name": "Spinach Salad",
+      "description": "The Spinach Salad is a simple and healthy option made with fresh spinach leaves, cherry tomatoes, and sliced mushrooms. It is topped with a honey mustard vinaigrette and served with a side of croutons."
     }
   ]
 }
