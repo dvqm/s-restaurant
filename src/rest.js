@@ -61,14 +61,14 @@ class Restaurants extends UiCreator {
       prevBtnId: 'prevPage',
     }];
 
-    const slidersChain = (node) => this.constructor.composer(
+    const eventsChain = (node) => this.constructor.composer(
       node,
       loginEvent,
       orderNowBtnsEvent,
       restPaginate,
     );
 
-    this.render(document.body, slidersChain(wrapper));
+    this.render(document.body, eventsChain(wrapper));
   }
 }
 
