@@ -7,6 +7,26 @@ class ContentCreator extends UiCreator {
     this.settings = settings;
   }
 
+  static sendGETParams(page, key, value) {
+    const baseUrl = new URL(window.location.href).origin;
+
+    return `${baseUrl}/${page}?${key}=${value}`;
+  }
+
+  static formattedPrice(price) {
+    let numString = price.toString();
+
+    const splitNum = numString.slice(-2);
+
+    numString = `${numString.slice(0, -2)},${splitNum}`;
+
+    return numString;
+  }
+
+  static getRestName(id, rests) {
+    return rests.find((restaurant) => restaurant.id === id);
+  }
+
   wrapper() {
     const content = {
       tag: 'div',
@@ -150,7 +170,9 @@ class ContentCreator extends UiCreator {
   }
 
   popularMeals() {
-    const data = this.settings.popularItems;
+    const data = this.settings.menu.filter((meal) => meal.featured);
+
+    const { restaurants } = this.settings;
 
     const content = {
       tag: 'div',
@@ -173,8 +195,7 @@ class ContentCreator extends UiCreator {
             img,
             name,
             restaurant,
-            price,
-            composition,
+            description,
           }) => ({
             tag: 'div',
             className: 'mealCard',
@@ -190,11 +211,11 @@ class ContentCreator extends UiCreator {
             }, {
               tag: 'span',
               className: 'restName',
-              textContent: restaurant,
+              textContent: this.constructor.getRestName(restaurant[0].id, restaurants).name,
             }, {
               tag: 'span',
               className: 'mealPrice',
-              textContent: `$${price}`,
+              textContent: `$${this.constructor.formattedPrice(restaurant[0].price)}`,
             }, {
               tag: 'button',
               className: 'orderNow',
@@ -202,7 +223,7 @@ class ContentCreator extends UiCreator {
             }, {
               tag: 'p',
               className: 'composition',
-              textContent: composition,
+              textContent: description,
             }],
           })),
         }, {
@@ -300,85 +321,100 @@ class ContentCreator extends UiCreator {
 
     const content = {
       tag: 'div',
-      c: [{
-        tag: 'h2',
-        textContent: 'Restaurants',
-      }, {
-        tag: 'div',
-        className: 'restContent',
-        id: 'restContent',
-        c: data.map(({
-          mealPict,
-          discounts,
-          deliveryRate,
-          logo,
-          name,
-          restRating,
-          currentState,
-        }) => ({
+      c: [
+        {
+          tag: 'h2',
+          textContent: 'Restaurants',
+        },
+        {
           tag: 'div',
-          className: 'restaurant',
           c: [{
-            tag: 'img',
-            src: `meals/${mealPict}`,
-            className: 'mealPict',
-            alt: 'restaurant picture',
-          }, {
-            tag: 'span',
-            className: 'discounts',
-            textContent: `${discounts} % off`,
-          }, {
-            tag: 'span',
-            className: 'deliveryRate',
-            textContent: deliveryRate,
-          }, {
-            tag: 'img',
-            className: 'restLogo',
-            alt: 'Restaurant logo',
-            src: `restaurants/${logo}`,
-          }, {
-            tag: 'span',
-            className: 'restName',
-            textContent: name,
-          }, {
-            tag: 'span',
-            className: 'ratings',
-            textContent: restRating,
-          }, {
-            tag: 'span',
-            className: currentState[0],
-            textContent: currentState[1],
-          }, {
             tag: 'button',
-            className: 'restMenu',
-            textContent: 'Go to menu >',
+            id: 'prevPage',
+            textContent: '<',
+            disabled: true,
+          }, ...pages.map((page, index) => ({
+            tag: 'button',
+            textContent: index + 1,
+            id: `startFrom${page}`,
+            className: 'pagination',
+          })), {
+            tag: 'button',
+            id: 'nextPage',
+            textContent: '>',
           }],
-        })),
-      }, {
-        tag: 'div',
-        c: [{
-          tag: 'button',
-          id: 'prevPage',
-          textContent: '<',
-          disabled: true,
-        }, ...pages.map((page, index) => ({
-          tag: 'button',
-          textContent: index + 1,
-          id: `startFrom${page}`,
-          className: 'pagination',
-        })), {
-          tag: 'button',
-          id: 'nextPage',
-          textContent: '>',
+        },
+
+        {
+          tag: 'div',
+          className: 'restContent',
+          id: 'restContent',
+          c: data.map(({
+            id,
+            mealPict,
+            discounts,
+            deliveryRate,
+            logo,
+            name,
+            restRating,
+            currentState,
+          }) => ({
+            tag: 'div',
+            className: 'restaurant',
+            c: [{
+              tag: 'img',
+              src: `meals/${mealPict}`,
+              className: 'mealPict',
+              alt: 'restaurant picture',
+            }, {
+              tag: 'span',
+              className: 'discounts',
+              textContent: `${discounts} % off`,
+            }, {
+              tag: 'span',
+              className: 'deliveryRate',
+              textContent: deliveryRate,
+            }, {
+              tag: 'img',
+              className: 'restLogo',
+              alt: 'Restaurant logo',
+              src: `restaurants/${logo}`,
+            }, {
+              tag: 'span',
+              className: 'restName',
+              textContent: name,
+            }, {
+              tag: 'span',
+              className: 'ratings',
+              textContent: restRating,
+            }, {
+              tag: 'span',
+              className: currentState[0],
+              textContent: currentState[1],
+            }, {
+              tag: 'a',
+              className: 'restMenu',
+              textContent: 'Go to menu >',
+              href: this.constructor.sendGETParams('meals.html', 'restid', id),
+            }],
+          })),
         }],
-      }],
     };
 
     return this.constructor.node(content);
   }
 
   menu() {
-    const data = this.settings.menuContent;
+    const sectionImg = this.settings.categoriesContent;
+
+    const data = ((menu) => menu
+      .map((meal) => meal.section)
+      .filter((type, index, self) => self.indexOf(type) === index)
+      .sort((a, b) => b.localeCompare(a))
+      .map((type) => ({
+        name: type,
+        img: sectionImg[type.toLowerCase()] ? sectionImg[type.toLowerCase()] : 'categoryPlaceholder.png',
+      })))(this.settings.menu);
 
     const content = {
       tag: 'div',
@@ -406,35 +442,36 @@ class ContentCreator extends UiCreator {
             className: 'categoryBtn forward',
             id: 'categNextBtn',
           }],
-        }, {
-          tag: 'div',
-          className: 'menuContent',
-          id: 'menuContent',
-          c: data.map(({
-            img,
-            name,
-          }) => ({
-            tag: 'div',
-            className: 'item',
-            c: [{
-              tag: 'img',
-              alt: 'Meal picture',
-              src: `meals/foodCategories/${img}`,
-            }, {
-              tag: 'span',
-              textContent: name,
-            }],
-          })),
         }],
-      }],
+      },
+      {
+        tag: 'div',
+        className: 'menuContent',
+        id: 'menuContent',
+        c: data.map(({
+          img,
+          name,
+        }) => ({
+          tag: 'a',
+          href: this.constructor.sendGETParams('meals.html', 'menu', name),
+          className: 'item',
+          c: [{
+            tag: 'img',
+            alt: 'Meal picture',
+            src: `meals/foodCategories/${img}`,
+          }, {
+            tag: 'span',
+            textContent: name,
+          }],
+        })),
+      },
+      ],
     };
 
     return this.constructor.node(content);
   }
 
-  meals() {
-    const data = this.settings.menu;
-
+  meals(data) {
     const filterMeals = (section, meals) => meals.filter((meal) => meal.section === section);
 
     const { restaurants } = this.settings;
@@ -445,32 +482,21 @@ class ContentCreator extends UiCreator {
       .sort((a, b) => b.localeCompare(a))
       .map((type) => ({ section: type })))(data);
 
-    const formatedPrice = (price) => {
-      let numString = price.toString();
-      const splitNum = numString.slice(-2);
-      numString = `${numString.slice(0, -2)},${splitNum}`;
-      return numString;
-    };
-
-    const getRestName = (id, rests) => rests.find((restaurant) => restaurant.id === id);
-
     const content = {
       tag: 'div',
       className: 'meals',
       c: [{
         tag: 'div',
+        className: 'ribbon',
         c: [{
           tag: 'button',
           id: 'allMeals',
+          disabled: true,
           textContent: 'All meals',
-        },
-        ...sections.map(({
-          section,
-          index,
-        }) => ({
+        }, ...sections.map(({ section }) => ({
           tag: 'button',
           textContent: section,
-          id: `title-${index}`,
+          id: section,
           className: 'pagination',
         }))],
       },
@@ -485,7 +511,7 @@ class ContentCreator extends UiCreator {
           img,
           name,
           restaurant,
-          composition,
+          description,
           id,
           labels,
         }) => ({
@@ -507,11 +533,11 @@ class ContentCreator extends UiCreator {
           }, {
             tag: 'span',
             className: 'restName',
-            textContent: `${getRestName(restaurant[0].id, restaurants).name}`,
+            textContent: `${this.constructor.getRestName(restaurant[0].id, restaurants).name}`,
           }, {
             tag: 'span',
             className: 'mealPrice',
-            textContent: `$ ${formatedPrice(restaurant[0].price)}`,
+            textContent: `$ ${this.constructor.formattedPrice(restaurant[0].price)}`,
           }, {
             tag: 'button',
             className: 'orderNow',
@@ -520,7 +546,7 @@ class ContentCreator extends UiCreator {
           }, {
             tag: 'p',
             className: 'composition',
-            textContent: composition,
+            textContent: description,
           }],
         })),
 
