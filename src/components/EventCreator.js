@@ -247,49 +247,67 @@ class EventCreator {
 
     const meals = node.querySelector(wrapper);
 
-    const mealsClone = meals.cloneNode(true);
+    const mealsClone = Array.from(meals.cloneNode(true).childNodes);
 
-    const mealsArray = Array.from(mealsClone.childNodes);
+    const categories = Array.from(node.querySelectorAll(`${selector} button`));
 
-    const categories = node.querySelectorAll(`${selector} button`);
+    const toggleDisabled = (name, btnsArr) => {
+      btnsArr.forEach((btn) => {
+        btn.disabled = false;
 
-    const categoriesArray = Array.from(categories);
+        if (name === null) btnsArr[0].disabled = true;
+        if (btn.id === name) btn.disabled = true;
+      });
+    };
 
-    const toggleCategory = (e) => {
-      categories.forEach((category) => category.disabled = false);
+    const mealsOffset = (name, index, categArr, mealsArr, point) => {
+      const nextCategory = categArr[index + 1] ? categArr[index + 1].textContent : -1;
 
-      e.target.disabled = true;
+      const startOfCategory = mealsArr.findIndex((header) => header.textContent === name);
 
-      const i = categoriesArray.findIndex((category) => category.textContent === startFrom);
-
-      const index = categoriesArray.indexOf(e.target) + 1;
-
-      const nextCategory = categories[index] ? categories[index].textContent : -1;
-
-      const startOfCategory = mealsArray
-        .findIndex((header) => header.textContent === e.target.textContent);
-
-      const endOfCategory = mealsArray
-        .findIndex((header) => header.textContent === nextCategory);
+      const endOfCategory = mealsArr.findIndex((header) => header.textContent === nextCategory);
 
       let result;
-
-      if (e.target.textContent === categories[0].textContent) {
-        result = mealsArray.slice(1, mealsArray.length - 1);
+      if (name === categArr[0].textContent) {
+        result = mealsArr.slice(1, mealsArr.length);
       } else if (nextCategory === -1) {
-        result = mealsArray.slice(startOfCategory, mealsArray.length - 1);
+        result = mealsArr.slice(startOfCategory, mealsArr.length + 1);
       } else {
-        result = mealsArray
+        result = mealsArr
           .slice(startOfCategory, endOfCategory);
       }
 
-      const ribbon = meals.firstChild;
+      const ribbon = point.firstChild;
 
-      meals.innerHTML = '';
+      point.innerHTML = '';
 
-      meals.append(ribbon);
+      point.append(ribbon);
 
-      result.forEach((meal) => meals.append(meal));
+      result.forEach((meal) => point.append(meal));
+
+      return point;
+    };
+
+    if (startFrom !== null) {
+      const index = categories.findIndex((category) => category.textContent === startFrom);
+
+      toggleDisabled(startFrom, categories);
+
+      mealsOffset(startFrom, index, categories, mealsClone, meals);
+    }
+
+    const toggleCategory = (e) => {
+      toggleDisabled(e.target.id, categories);
+
+      const categoryIndex = categories.indexOf(e.target);
+
+      mealsOffset(
+        e.target.textContent,
+        categoryIndex,
+        categories,
+        mealsClone,
+        meals,
+      );
     };
 
     categories.forEach((category) => category
