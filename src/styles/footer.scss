@@ -11,12 +11,12 @@
   .cityList {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: left;
 
     a {
       width: 140px;
       text-decoration: none;
-      margin: 10px 100px 10px 30px;
+      margin: 10px 135px 10px 30px;
       @include common.fontStyle(common.$regular-font-size,
               common.$light-font-cr,
               left, normal, normal
