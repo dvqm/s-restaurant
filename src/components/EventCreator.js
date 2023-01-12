@@ -127,13 +127,13 @@ class EventCreator {
       pageSize,
     } = sets;
 
-    const btns = node.querySelectorAll(`.${id}`);
+    const btns = node.querySelectorAll(id);
 
-    const nextBtn = node.querySelector(`#${nextBtnId}`);
+    const nextBtn = node.querySelector(nextBtnId);
 
-    const prevBtn = node.querySelector(`#${prevBtnId}`);
+    const prevBtn = node.querySelector(prevBtnId);
 
-    const restaurantNodes = node.querySelector(`#${nodesId}`);
+    const restaurantNodes = node.querySelector(nodesId);
 
     const restaurantBackup = restaurantNodes.cloneNode(true);
 
@@ -150,7 +150,7 @@ class EventCreator {
       btns[0].disabled = true;
     };
 
-    const setElements = (nodes, content, ind, offset) => {
+    const setRestaurants = (nodes, content, ind, offset) => {
       const elements = nodes.cloneNode(true);
 
       for (let i = ind; i < ind + offset; i += 1) {
@@ -166,7 +166,7 @@ class EventCreator {
       });
     };
 
-    const getBtnId = (btn) => Number(btn.id.replace('startFrom', ''));
+    const getBtnId = (btn) => parseInt(btn.id.replace('startFrom', ''), 10);
 
     const checkBtnDisable = (btn, neighborBtn) => {
       btn.disabled = !!neighborBtn.disabled;
@@ -174,6 +174,8 @@ class EventCreator {
 
     const pagesToggle = (e) => {
       let getIndexOfFirstChild;
+
+      const nextBtnIdStr = nextBtnId.slice(1);
 
       for (let i = 0; i < btns.length; i += 1) {
         const btn = btns[i];
@@ -183,13 +185,13 @@ class EventCreator {
 
           getIndexOfFirstChild = getBtnId(btn);
 
-          if (e.target.id === nextBtnId) {
+          if (e.target.id === nextBtnIdStr) {
             btns[i + 1].disabled = true;
           } else {
             btns[i - 1].disabled = true;
           }
 
-          if (e.target.id === nextBtnId && i + 1 === btns.length - 1) {
+          if (e.target.id === nextBtnIdStr && i + 1 === btns.length - 1) {
             e.target.disabled = true;
           } else if (e.target.id === prevBtnId && i - 1 === 0) e.target.disabled = true;
 
@@ -201,32 +203,33 @@ class EventCreator {
         }
       }
 
-      const toggleIndex = e.target.id === nextBtnId
+      const toggleIndex = e.target.id === nextBtnIdStr
         ? getIndexOfFirstChild + pageSize
         : getIndexOfFirstChild - pageSize;
 
       restaurantNodes.innerHTML = '';
 
-      setElements(restaurantBackup, restaurantNodes, toggleIndex, pageSize);
+      setRestaurants(restaurantBackup, restaurantNodes, toggleIndex, pageSize);
     };
 
-    btns.forEach((btn, ind) => btn.addEventListener(eventType, (e) => {
-      const startItem = getBtnId(e.target);
+    btns.forEach((btn, ind) => btn
+      .addEventListener(eventType, (e) => {
+        const startItem = getBtnId(e.target);
 
-      enableBtns();
+        enableBtns();
 
-      nextBtn.disabled = ind === btns.length - 1;
+        nextBtn.disabled = ind === btns.length - 1;
 
-      e.target.disabled = true;
+        e.target.disabled = true;
 
-      restaurantNodes.innerHTML = '';
+        restaurantNodes.innerHTML = '';
 
-      checkBtnDisable(prevBtn, btns[0]);
+        checkBtnDisable(prevBtn, btns[0]);
 
-      checkBtnDisable(nextBtn, btns[btns.length - 1]);
+        checkBtnDisable(nextBtn, btns[btns.length - 1]);
 
-      setElements(restaurantBackup, restaurantNodes, startItem, pageSize);
-    }));
+        setRestaurants(restaurantBackup, restaurantNodes, startItem, pageSize);
+      }));
 
     nextBtn.addEventListener(eventType, pagesToggle);
 
@@ -241,7 +244,8 @@ class EventCreator {
     const {
       startFrom,
       wrapper,
-      selector,
+      header,
+      ribbon,
       eventType,
     } = sets;
 
@@ -249,8 +253,18 @@ class EventCreator {
 
     const mealsClone = Array.from(meals.cloneNode(true).childNodes);
 
-    const categories = Array.from(node.querySelectorAll(`${selector} button`));
+    const categories = Array.from(node.querySelectorAll(`${ribbon} button`));
 
+    const scrollToTop = (headersCollection) => {
+      const scroll = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
+
+      headersCollection.forEach((heading) => heading.addEventListener(eventType, scroll));
+    };
     const toggleDisabled = (name, btnsArr) => {
       btnsArr.forEach((btn) => {
         btn.disabled = false;
@@ -263,11 +277,12 @@ class EventCreator {
     const mealsOffset = (name, index, categArr, mealsArr, point) => {
       const nextCategory = categArr[index + 1] ? categArr[index + 1].textContent : -1;
 
-      const startOfCategory = mealsArr.findIndex((header) => header.textContent === name);
+      const startOfCategory = mealsArr.findIndex((heading) => heading.textContent === name);
 
-      const endOfCategory = mealsArr.findIndex((header) => header.textContent === nextCategory);
+      const endOfCategory = mealsArr.findIndex((heading) => heading.textContent === nextCategory);
 
       let result;
+
       if (name === categArr[0].textContent) {
         result = mealsArr.slice(1, mealsArr.length);
       } else if (nextCategory === -1) {
@@ -277,11 +292,11 @@ class EventCreator {
           .slice(startOfCategory, endOfCategory);
       }
 
-      const ribbon = point.firstChild;
+      const paginator = point.firstChild;
 
       point.innerHTML = '';
 
-      point.append(ribbon);
+      point.append(paginator);
 
       result.forEach((meal) => point.append(meal));
 
@@ -294,6 +309,10 @@ class EventCreator {
       toggleDisabled(startFrom, categories);
 
       mealsOffset(startFrom, index, categories, mealsClone, meals);
+
+      const headers = node.querySelectorAll(header);
+
+      scrollToTop(headers);
     }
 
     const toggleCategory = (e) => {
@@ -308,6 +327,10 @@ class EventCreator {
         mealsClone,
         meals,
       );
+
+      const headers = node.querySelectorAll(header);
+
+      scrollToTop(headers);
     };
 
     categories.forEach((category) => category
