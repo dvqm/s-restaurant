@@ -37,53 +37,67 @@ class MainPage extends UiCreator {
       this.content.footer(),
     );
 
-    const slidersChain = (node) => this.constructor.composer(
+    const popularItems = [this.events.slider, {
+      showItems: 5,
+      offset: 1,
+      shell: 'sliderContent',
+      card: 'mealCard',
+      prev: 'prevMealBtn',
+      next: 'nextMealBtn',
+    }];
+
+    const mealsCategories = [this.events.slider, {
+      showItems: 6,
+      offset: 1,
+      shell: 'menuContent',
+      card: 'item',
+      prev: 'categPrevBtn',
+      next: 'categNextBtn',
+    }];
+
+    const loginPage = [this.events.underConstruction, {
+      content: this.content.notFinished(),
+      id: 'login',
+      eventType: 'click',
+    }];
+
+    const findFood = [this.events.underConstruction, {
+      content: this.content.notFinished(),
+      id: 'findFoodBtn',
+      eventType: 'click',
+    }];
+
+    const orderNow = [this.events.underConstruction, {
+      content: this.content.notFinished(),
+      id: 'orderNow',
+      bunch: true,
+      eventType: 'click',
+    }];
+
+    const routeToRests = [this.events.pageRoute, {
+      id: 'viewRest',
+      eventType: 'click',
+      route: '/rest.html',
+    }];
+
+    const routeToMeals = [this.events.pageRoute, {
+      id: 'viewAllCategories',
+      eventType: 'click',
+      route: '/meals.html',
+    }];
+
+    const eventsChain = (node) => this.constructor.composer(
       node,
-      [this.events.slider, {
-        showItems: 5,
-        offset: 1,
-        shell: 'sliderContent',
-        card: 'mealCard',
-        prev: 'prevMealBtn',
-        next: 'nextMealBtn',
-      }],
-      [this.events.slider, {
-        showItems: 5,
-        offset: 1,
-        shell: 'menuContent',
-        card: 'item',
-        prev: 'categPrevBtn',
-        next: 'categNextBtn',
-      }],
-      [this.events.underConstruction, {
-        content: this.content.notFinished(),
-        id: 'login',
-        eventType: 'click',
-      }],
-      [this.events.underConstruction, {
-        content: this.content.notFinished(),
-        id: 'findFoodBtn',
-        eventType: 'click',
-      }],
-      [this.events.underConstruction, {
-        content: this.content.notFinished(),
-        id: 'orderNow',
-        bunch: true,
-        eventType: 'click',
-      }],
-      [this.events.pageRoute, {
-        id: 'viewRest',
-        eventType: 'click',
-        route: '/rest.html',
-      }],
-      [this.events.pageRoute, {
-        id: 'viewAllCategories',
-        eventType: 'click',
-        route: '/meals.html',
-      }],
+      popularItems,
+      mealsCategories,
+      loginPage,
+      findFood,
+      orderNow,
+      routeToRests,
+      routeToMeals,
     );
 
-    this.render(document.body, slidersChain(wrapper));
+    this.render(document.body, eventsChain(wrapper));
   }
 }
 
