@@ -13,6 +13,7 @@ import './styles/header.scss';
 import './styles/meals.scss';
 import './styles/promo.scss';
 import './styles/topNav.scss';
+import './styles/underConstruct.scss';
 
 class MainPage extends UiCreator {
   constructor() {
@@ -57,19 +58,19 @@ class MainPage extends UiCreator {
 
     const loginPage = [this.events.underConstruction, {
       content: this.content.notFinished(),
-      id: 'login',
+      id: '#login',
       eventType: 'click',
     }];
 
     const findFood = [this.events.underConstruction, {
       content: this.content.notFinished(),
-      id: 'findFoodBtn',
+      id: '#findFoodBtn',
       eventType: 'click',
     }];
 
     const orderNow = [this.events.underConstruction, {
       content: this.content.notFinished(),
-      id: 'orderNow',
+      id: '.orderNow',
       bunch: true,
       eventType: 'click',
     }];

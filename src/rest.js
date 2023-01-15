@@ -7,6 +7,7 @@ import data from '../assets/json/contentHTML.json';
 import './styles/index.scss';
 import './styles/common.scss';
 import './styles/topNav.scss';
+import './styles/underConstruct.scss';
 import './styles/restaurants.scss';
 import './styles/footer.scss';
 
@@ -37,14 +38,14 @@ class Restaurants extends UiCreator {
 
     const orderNowBtnsEvent = [this.events.underConstruction, {
       content: this.content.notFinished(),
-      id: 'orderNow',
+      id: '#orderNow',
       bunch: true,
       eventType: 'click',
     }];
 
     const loginEvent = [this.events.underConstruction, {
       content: this.content.notFinished(),
-      id: 'login',
+      id: '#login',
       eventType: 'click',
     }];
 

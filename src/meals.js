@@ -6,7 +6,7 @@ import data from '../assets/json/contentHTML.json';
 import './styles/index.scss';
 import './styles/common.scss';
 import './styles/topNav.scss';
-import './styles/ribbon.scss';
+import './styles/underConstruct.scss';
 import './styles/meals.scss';
 import './styles/footer.scss';
 
@@ -60,10 +60,19 @@ class Meals extends UiCreator {
       wrapper: '.meals',
       header: '.sectionHeader',
       ribbon: '.ribbon',
+      orderBtnPoint: '.orderNow',
+      content: this.content.notFinished(),
+      underConstructEvent: this.events.underConstruction,
       eventType: 'click',
     }];
 
-    const eventsChain = (node) => this.constructor.composer(node, categorySwitch);
+    const loginPage = [this.events.underConstruction, {
+      content: this.content.notFinished(),
+      id: '#login',
+      eventType: 'click',
+    }];
+
+    const eventsChain = (node) => this.constructor.composer(node, categorySwitch, loginPage);
 
     this.render(document.body, eventsChain(wrapper));
   }
