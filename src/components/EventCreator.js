@@ -72,28 +72,24 @@ class EventCreator {
       eventType,
     } = sets;
 
-    const cancel = (e) => {
-      e.target.parentNode.remove();
-    };
-
     const backdrop = content.querySelector('#backdrop');
 
-    backdrop.addEventListener(eventType, cancel);
+    backdrop.addEventListener(eventType, (e) => e.target.parentNode.remove());
 
     const cancelBtn = content.querySelector('#notFinished');
 
-    cancelBtn.addEventListener(eventType, cancel);
+    cancelBtn.addEventListener(eventType, (e) => e.target.parentNode.parentNode.remove());
 
     const show = () => {
       document.body.append(content);
     };
 
     if (bunch) {
-      const btns = node.querySelectorAll(`.${id}`);
+      const btns = node.querySelectorAll(id);
 
       btns.forEach((btn) => btn.addEventListener(eventType, show));
     } else {
-      const btn = node.querySelector(`#${id}`);
+      const btn = node.querySelector(id);
 
       btn.addEventListener(eventType, show);
     }
@@ -246,6 +242,9 @@ class EventCreator {
       wrapper,
       header,
       ribbon,
+      orderBtnPoint,
+      content,
+      underConstructEvent,
       eventType,
     } = sets;
 
@@ -335,6 +334,13 @@ class EventCreator {
 
     categories.forEach((category) => category
       .addEventListener(eventType, toggleCategory));
+
+    underConstructEvent(node, {
+      content,
+      id: orderBtnPoint,
+      bunch: true,
+      eventType: 'click',
+    });
 
     return node;
   }
