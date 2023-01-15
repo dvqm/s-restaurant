@@ -1,0 +1,147 @@
+@use './common';
+
+
+.mealItems {
+  width: common.$content-width;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  h2 {
+    @include common.fontStyle(
+                    common.$h2-font-size,
+                    common.$h2-font-cr,
+                    center);
+  }
+
+  button.sliderBtn {
+    @include common.sliderBtn(60px);
+    margin: 0 50px;
+  }
+
+
+  .mealSlider {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+}
+
+.meals {
+  display: flex;
+  flex-flow: row wrap;
+
+  .sectionHeader {
+    cursor: all-scroll;
+  }
+
+  .mealCard {
+    $width: 200px;
+    margin: 15px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    width: $width;
+
+    .mealPhoto {
+      width: $width;
+      border-radius: 10px;
+
+    }
+
+    .mealName, .mealPrice {
+      @include common.fontStyle(
+                      common.$figure-headers-font-size,
+                      common.$darker-font-cr
+      );
+      margin: 5px 0;
+    }
+
+    .mealName {
+      height: 2.2em;
+    }
+
+    .restName {
+      @include common.fontStyle(
+                      common.$figure-headers-font-size,
+                      common.$bg-cr-10
+      );
+      margin: 10px 0;
+
+      &:before {
+        content: common.$positionSvg;
+        margin-right: 10px;
+      }
+    }
+
+    .composition {
+      @include common.fontStyle(
+                      common.$composition-font-size,
+                      common.$darker-font-cr,
+                      default,
+                      italic,
+                      normal
+      );
+    }
+
+    button.orderNow {
+      background: common.$bg-cr-20;
+      box-shadow: 0 5px 10px rgba(253, 114, 92, 0.22), 0 20px 40px rgba(250, 99, 35, 0.24);
+      border-radius: 8px;
+      border: none;
+
+      @include common.fontStyle(
+                      common.$btn-font-size,
+                      common.$light-font-cr,
+                      center
+      );
+
+      width: $width;
+      height: 40px;
+
+      &:active {
+        background-color: common.$bg-cr-10;
+      }
+    }
+
+    .mealLabels {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+
+      display: flex;
+      flex-flow: column nowrap;
+
+      span {
+        @include common.fontStyle(common.$figure-headers-font-size, common.$darker-font-cr);
+        padding: 2px 7px;
+        margin: 5px 0;
+        border-radius: 5px;
+        background-color: yellow;
+      }
+
+      .chicken, .bacon {
+        background-color: pink;
+      }
+
+      .vegetarian, .vegan, .gluten-free {
+        background-color: lightgreen;
+      }
+
+      .meat-lover, .beef {
+        background-color: orangered;
+      }
+
+    }
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+}

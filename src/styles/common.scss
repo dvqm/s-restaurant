@@ -33,13 +33,13 @@ $block-padding: 30px;
 $content-width: 1540px;
 
 //font-size
-$composition-font-size: 16px;
-$btn-font-size: 18px;
-$regular-font-size: 14px;
-$figure-headers-font-size: 20px;
-$figure-fields-font-size: 30px;
-$h2-font-size: 43px;
-$h2-main-font-size: 60px;
+$composition-font-size: 1em;
+$btn-font-size: 1.1em;
+$regular-font-size: 0.9em;
+$figure-headers-font-size: 1.2em;
+$figure-fields-font-size: 1.9em;
+$h2-font-size: 2.7em;
+$h2-main-font-size: 3.8em;
 
 //mixins
 @mixin fontStyle($font-size, $color, $align: default, $font-style: normal, $font-weight: bold) {
@@ -106,9 +106,22 @@ button.secBtn {
   @include fontStyle($composition-font-size, $bg-cr-11);
   background-color: transparent;
   border: none;
+  cursor: pointer;
 
   &:active {
     color: $bg-cr-20;
+  }
+
+  &:hover {
+    background-color: $bg-cr-11;
+    color: $light-font-cr;
+    border-radius: $standard-bor-rad;
+  }
+
+  &:disabled {
+    background-color: $bg-cr-footer2;
+    color: $light-font-cr;
+    border-radius: $standard-bor-rad;
   }
 }
 

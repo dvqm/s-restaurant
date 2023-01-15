@@ -1,6 +1,6 @@
 @use './common';
 
-.featuredRestaurants {
+.restaurants {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -135,7 +135,6 @@
     background: rgba(241, 114, 40, 0.2);
     color: #F17228;
   }
-
 }
 
 
