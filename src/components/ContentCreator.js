@@ -705,6 +705,7 @@ class ContentCreator extends UiCreator {
               textContent: text,
             }, {
               tag: 'button',
+              className: 'secBtn',
               id: 'notFinished',
               textContent: 'Cancel',
             },
