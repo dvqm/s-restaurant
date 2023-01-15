@@ -1,5 +1,6 @@
 import ContentCreator from './components/ContentCreator';
 import UiCreator from './components/UiCreator';
+import './styles/underConstruct.scss';
 
 const content = new ContentCreator();
 
