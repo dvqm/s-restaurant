@@ -176,7 +176,7 @@ class ContentCreator extends UiCreator {
 
     const content = {
       tag: 'div',
-      className: 'popularItems',
+      className: 'mealItems',
       c: [{
         tag: 'h2',
         textContent: 'Popular Items',
@@ -242,7 +242,7 @@ class ContentCreator extends UiCreator {
 
     const content = {
       tag: 'div',
-      className: 'featuredRestaurants',
+      className: 'restaurants',
       c: [{
         tag: 'h2',
         textContent: 'Featured Restaurants',
@@ -321,6 +321,7 @@ class ContentCreator extends UiCreator {
 
     const content = {
       tag: 'div',
+      className: 'restaurants',
       c: [
         {
           tag: 'h2',
@@ -328,8 +329,10 @@ class ContentCreator extends UiCreator {
         },
         {
           tag: 'div',
+          className: 'ribbon',
           c: [{
             tag: 'button',
+            className: 'secBtn',
             id: 'prevPage',
             textContent: '<',
             disabled: true,
@@ -337,9 +340,10 @@ class ContentCreator extends UiCreator {
             tag: 'button',
             textContent: index + 1,
             id: `startFrom${page}`,
-            className: 'pagination',
+            className: 'secBtn pagBtns',
           })), {
             tag: 'button',
+            className: 'secBtn',
             id: 'nextPage',
             textContent: '>',
           }],
@@ -361,42 +365,47 @@ class ContentCreator extends UiCreator {
           }) => ({
             tag: 'div',
             className: 'restaurant',
-            c: [{
-              tag: 'img',
-              src: `meals/${mealPict}`,
-              className: 'mealPict',
-              alt: 'restaurant picture',
-            }, {
-              tag: 'span',
-              className: 'discounts',
-              textContent: `${discounts} % off`,
-            }, {
-              tag: 'span',
-              className: 'deliveryRate',
-              textContent: deliveryRate,
-            }, {
-              tag: 'img',
-              className: 'restLogo',
-              alt: 'Restaurant logo',
-              src: `restaurants/${logo}`,
-            }, {
-              tag: 'span',
-              className: 'restName',
-              textContent: name,
-            }, {
-              tag: 'span',
-              className: 'ratings',
-              textContent: restRating,
-            }, {
-              tag: 'span',
-              className: currentState[0],
-              textContent: currentState[1],
-            }, {
-              tag: 'a',
-              className: 'restMenu',
-              textContent: 'Go to menu >',
-              href: this.constructor.sendGETParams('meals.html', 'restid', id),
-            }],
+            c: [
+              {
+                tag: 'a',
+                className: 'restMenu',
+                title: 'Go to the restaurant menu',
+                href: this.constructor.sendGETParams('meals.html', 'restid', id),
+                c: [{
+                  tag: 'img',
+                  src: `meals/${mealPict}`,
+                  className: 'mealPict',
+                  alt: 'restaurant picture',
+                },
+                ],
+              },
+              {
+                tag: 'span',
+                className: 'discounts',
+                textContent: `${discounts} % off`,
+              }, {
+                tag: 'span',
+                className: 'deliveryRate',
+                textContent: deliveryRate,
+              }, {
+                tag: 'img',
+                className: 'restLogo',
+                alt: 'Restaurant logo',
+                src: `restaurants/${logo}`,
+              }, {
+                tag: 'span',
+                className: 'restName',
+                textContent: name,
+              }, {
+                tag: 'span',
+                className: 'ratings',
+                textContent: restRating,
+              }, {
+                tag: 'span',
+                className: currentState[0],
+                textContent: currentState[1],
+              },
+            ],
           })),
         }],
     };
@@ -490,6 +499,7 @@ class ContentCreator extends UiCreator {
         className: 'ribbon',
         c: [{
           tag: 'button',
+          className: 'secBtn',
           id: 'allMeals',
           disabled: true,
           textContent: 'All meals',
@@ -497,12 +507,13 @@ class ContentCreator extends UiCreator {
           tag: 'button',
           textContent: section,
           id: section,
-          className: 'pagination',
+          className: 'secBtn',
         }))],
       },
 
       ...sections.map(({ section }) => ([{
         tag: 'h2',
+        className: 'sectionHeader',
         textContent: section,
       },
 
@@ -522,11 +533,19 @@ class ContentCreator extends UiCreator {
             className: 'mealPhoto',
             alt: 'Meal picture',
             src: `meals/${img}`,
-          }, ...labels.map((label) => ({
-            tag: 'span',
-            className: 'mealLabel',
-            textContent: label,
-          })), {
+          },
+          {
+            tag: 'div',
+            className: 'mealLabels',
+            c: [
+              ...labels.map((label) => ({
+                tag: 'span',
+                className: label,
+                textContent: label,
+              })),
+            ],
+          },
+          {
             tag: 'span',
             className: 'mealName',
             textContent: name,
@@ -671,18 +690,27 @@ class ContentCreator extends UiCreator {
     const content = {
       tag: 'div',
       className: 'construction',
-      c: [{
-        tag: 'span',
-        textContent: text,
-      }, {
-        tag: 'button',
-        id: 'notFinished',
-        textContent: 'Cancel',
-      }, {
-        tag: 'div',
-        className: 'backLayer',
-        id: 'backdrop',
-      }],
+      c: [
+        {
+          tag: 'div',
+          className: 'backLayer',
+          id: 'backdrop',
+        },
+        {
+          tag: 'div',
+          className: 'dialog',
+          c: [
+            {
+              tag: 'span',
+              textContent: text,
+            }, {
+              tag: 'button',
+              id: 'notFinished',
+              textContent: 'Cancel',
+            },
+          ],
+        },
+      ],
     };
 
     return this.constructor.node(content);
