@@ -22,11 +22,16 @@ if (errMsg === null) {
 }
 
 const btn = document.querySelector('#notFinished');
-
 const backdrop = document.querySelector('#backdrop');
 
 const cancel = () => {
-  window.history.go(-2);
+  const referrer = new URL(document.referrer).pathname;
+
+  if (referrer === '/sb-restaurant/meals.html') {
+    window.history.go(-2);
+  } else {
+    window.history.go(-1);
+  }
 };
 
 btn.addEventListener('click', cancel);
