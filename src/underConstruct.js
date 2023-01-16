@@ -17,7 +17,7 @@ if (errMsg === null) {
 } else if (errMsg === 'emptyrest') {
   ui.render(
     document.body,
-    content.notFinished('This restaurant did not have its menu'),
+    content.notFinished('This restaurant doesn\'t have its menu'),
   );
 }
 
