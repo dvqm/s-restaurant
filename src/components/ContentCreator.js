@@ -251,7 +251,9 @@ class ContentCreator extends UiCreator {
       }, {
         tag: 'div',
         className: 'restContent',
+        id: 'restContent',
         c: data.map(({
+          id,
           mealPict,
           discounts,
           deliveryRate,
@@ -262,37 +264,47 @@ class ContentCreator extends UiCreator {
         }) => ({
           tag: 'div',
           className: 'restaurant',
-          c: [{
-            tag: 'img',
-            src: `meals/${mealPict}`,
-            className: 'mealPict',
-            alt: 'restaurant picture',
-          }, {
-            tag: 'span',
-            className: 'discounts',
-            textContent: `${discounts} % off`,
-          }, {
-            tag: 'span',
-            className: 'deliveryRate',
-            textContent: deliveryRate,
-          }, {
-            tag: 'img',
-            className: 'restLogo',
-            alt: 'Restaurant logo',
-            src: `restaurants/${logo}`,
-          }, {
-            tag: 'span',
-            className: 'restName',
-            textContent: name,
-          }, {
-            tag: 'span',
-            className: 'ratings',
-            textContent: restRating,
-          }, {
-            tag: 'span',
-            className: currentState[0],
-            textContent: currentState[1],
-          }],
+          c: [
+            {
+              tag: 'a',
+              className: 'restMenu',
+              title: 'Go to the restaurant menu',
+              href: this.constructor.sendGETParams(`${this.repo}/meals.html`, 'restid', id),
+              c: [{
+                tag: 'img',
+                src: `meals/${mealPict}`,
+                className: 'mealPict',
+                alt: 'restaurant picture',
+              },
+              ],
+            },
+            {
+              tag: 'span',
+              className: 'discounts',
+              textContent: `${discounts} % off`,
+            }, {
+              tag: 'span',
+              className: 'deliveryRate',
+              textContent: deliveryRate,
+            }, {
+              tag: 'img',
+              className: 'restLogo',
+              alt: 'Restaurant logo',
+              src: `restaurants/${logo}`,
+            }, {
+              tag: 'span',
+              className: 'restName',
+              textContent: name,
+            }, {
+              tag: 'span',
+              className: 'ratings',
+              textContent: restRating,
+            }, {
+              tag: 'span',
+              className: currentState[0],
+              textContent: currentState[1],
+            },
+          ],
         })),
       }, {
         tag: 'button',
@@ -507,7 +519,7 @@ class ContentCreator extends UiCreator {
           textContent: 'All meals',
         }, ...sections.map(({ section }) => ({
           tag: 'button',
-          textContent: section,
+          textContent: section.replace(/^\w/, (c) => c.toUpperCase()),
           id: section,
           className: 'secBtn',
         }))],
@@ -516,7 +528,7 @@ class ContentCreator extends UiCreator {
       ...sections.map(({ section }) => ([{
         tag: 'h2',
         className: 'sectionHeader',
-        textContent: section,
+        textContent: section.replace(/^\w/, (c) => c.toUpperCase()),
       },
 
       ...filterMeals(section, data)
@@ -709,7 +721,7 @@ class ContentCreator extends UiCreator {
               tag: 'button',
               className: 'secBtn',
               id: 'notFinished',
-              textContent: 'Cancel',
+              textContent: 'Ok',
             },
           ],
         },

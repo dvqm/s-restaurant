@@ -1687,12 +1687,12 @@
     }
   ],
   "categoriesContent": {
-    "pizza": "pizza.png",
-    "burger": "burger.png",
+    "pizzas": "pizza.png",
+    "burgers": "burger.png",
     "noodles": "noodles.png",
-    "sub-sandwich": "subSandwich.png",
-    "chowmein": "chowmein.png",
-    "steak": "steak.png"
+    "sandwiches": "subSandwich.png",
+    "chowmeins": "chowmein.png",
+    "steaks": "steak.png"
   },
   "footer": {
     "cityList": [
@@ -1874,7 +1874,7 @@
       "id": 1,
       "featured": true,
       "img": "cheeseBurger.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "beef",
         "American"
@@ -1900,7 +1900,7 @@
       "id": 2,
       "featured": true,
       "img": "crispySandwich.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "chicken",
         "bacon"
@@ -2011,7 +2011,7 @@
       "id": 6,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian"
       ],
@@ -2036,7 +2036,7 @@
       "id": 7,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian",
         "gluten-free"
@@ -2062,7 +2062,7 @@
       "id": 8,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "spicy"
       ],
@@ -2079,7 +2079,7 @@
       "id": 9,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "meat-lover"
       ],
@@ -2096,7 +2096,7 @@
       "id": 10,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian"
       ],
@@ -2113,7 +2113,7 @@
       "id": 11,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegan"
       ],
@@ -2130,7 +2130,7 @@
       "id": 12,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "gluten-free"
       ],
@@ -2147,7 +2147,7 @@
       "id": 13,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian"
       ],
@@ -2164,7 +2164,7 @@
       "id": 14,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "meat-lover"
       ],
@@ -2181,7 +2181,7 @@
       "id": 15,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian"
       ],
@@ -2198,7 +2198,7 @@
       "id": 16,
       "featured": true,
       "img": "mealPlaceholder.png",
-      "section": "pizza",
+      "section": "pizzas",
       "labels": [
         "vegetarian"
       ],
@@ -2214,7 +2214,7 @@
     {
       "id": 17,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "vegetarian"
       ],
@@ -2230,7 +2230,7 @@
     {
       "id": 18,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "gluten-free"
       ],
@@ -2246,7 +2246,7 @@
     {
       "id": 19,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "spicy"
       ],
@@ -2262,7 +2262,7 @@
     {
       "id": 20,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "meat-lover"
       ],
@@ -2278,7 +2278,7 @@
     {
       "id": 21,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "vegetarian"
       ],
@@ -2294,7 +2294,7 @@
     {
       "id": 22,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "vegan"
       ],
@@ -2310,7 +2310,7 @@
     {
       "id": 23,
       "img": "mealPlaceholder.png",
-      "section": "burger",
+      "section": "burgers",
       "labels": [
         "gluten-free"
       ],
@@ -2326,7 +2326,7 @@
     {
       "id": 24,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "vegetarian"
       ],
@@ -2342,7 +2342,7 @@
     {
       "id": 25,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "meat-lover"
       ],
@@ -2358,7 +2358,7 @@
     {
       "id": 26,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "vegetarian"
       ],
@@ -2374,7 +2374,7 @@
     {
       "id": 27,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "vegan"
       ],
@@ -2390,7 +2390,7 @@
     {
       "id": 28,
       "img": "mealPlaceholder.png",
-      "section": "sub-sandwich",
+      "section": "sandwiches",
       "labels": [
         "gluten-free"
       ],
@@ -2486,7 +2486,7 @@
     {
       "id": 34,
       "img": "mealPlaceholder.png",
-      "section": "chowmein",
+      "section": "chowmeins",
       "labels": [
         "vegetarian"
       ],
@@ -2502,7 +2502,7 @@
     {
       "id": 35,
       "img": "mealPlaceholder.png",
-      "section": "chowmein",
+      "section": "chowmeins",
       "labels": [
         "meat-lover"
       ],
@@ -2518,7 +2518,7 @@
     {
       "id": 36,
       "img": "mealPlaceholder.png",
-      "section": "chowmein",
+      "section": "chowmeins",
       "labels": [
         "vegetarian"
       ],
@@ -2534,7 +2534,7 @@
     {
       "id": 37,
       "img": "mealPlaceholder.png",
-      "section": "steak",
+      "section": "steaks",
       "labels": [
         "beef"
       ],
@@ -2550,7 +2550,7 @@
     {
       "id": 38,
       "img": "mealPlaceholder.png",
-      "section": "steak",
+      "section": "steaks",
       "labels": [
         "beef"
       ],
@@ -2566,7 +2566,7 @@
     {
       "id": 39,
       "img": "mealPlaceholder.png",
-      "section": "steak",
+      "section": "steaks",
       "labels": [
         "beef"
       ],
@@ -2582,7 +2582,7 @@
     {
       "id": 40,
       "img": "mealPlaceholder.png",
-      "section": "steak",
+      "section": "steaks",
       "labels": [
         "beef"
       ],
@@ -2598,7 +2598,7 @@
     {
       "id": 41,
       "img": "mealPlaceholder.png",
-      "section": "steak",
+      "section": "steaks",
       "labels": [
         "beef"
       ],
