@@ -330,6 +330,13 @@ class EventCreator {
       const headers = node.querySelectorAll(header);
 
       scrollToTop(headers);
+
+      underConstructEvent(node, {
+        content,
+        id: orderBtnPoint,
+        bunch: true,
+        eventType: 'click',
+      });
     };
 
     categories.forEach((category) => category
