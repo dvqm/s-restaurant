@@ -44,7 +44,7 @@ class ContentCreator extends UiCreator {
       className: 'topNav',
       c: [{
         tag: 'a',
-        href: '/index.html',
+        href: `/${this.repo}/`,
         target: '_self',
         c: [{
           tag: 'img',
