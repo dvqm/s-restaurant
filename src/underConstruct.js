@@ -26,7 +26,7 @@ const btn = document.querySelector('#notFinished');
 const backdrop = document.querySelector('#backdrop');
 
 const cancel = () => {
-  window.history.back();
+  window.history.go(-2);
 };
 
 btn.addEventListener('click', cancel);
