@@ -5,6 +5,9 @@ class EventCreator {
       showItems,
       shell,
       card,
+      notFinished,
+      underConstructEvent,
+      eventType,
     } = sets;
 
     const wrapper = node.querySelector(`#${shell}`);
@@ -55,6 +58,14 @@ class EventCreator {
 
     nextBtn.addEventListener('click', () => {
       ticker(offset);
+
+      underConstructEvent(node, {
+        content: notFinished,
+        eventType,
+        id: '.orderNow',
+        bunch: true,
+        ifSlider: true,
+      });
     });
 
     prevBtn.addEventListener('click', () => {
@@ -70,6 +81,7 @@ class EventCreator {
       id,
       bunch,
       eventType,
+      ifSlider,
     } = sets;
 
     const backdrop = content.querySelector('#backdrop');
@@ -87,7 +99,12 @@ class EventCreator {
     if (bunch) {
       const btns = node.querySelectorAll(id);
 
-      btns.forEach((btn) => btn.addEventListener(eventType, show));
+      if (ifSlider) {
+        btns.item(btns.length - 1)
+          .addEventListener(eventType, show);
+      } else {
+        btns.forEach((btn) => btn.addEventListener(eventType, show));
+      }
     } else {
       const btn = node.querySelector(id);
 
@@ -243,7 +260,7 @@ class EventCreator {
       header,
       ribbon,
       orderBtnPoint,
-      content,
+      notFinished,
       underConstructEvent,
       eventType,
     } = sets;
@@ -332,7 +349,7 @@ class EventCreator {
       scrollToTop(headers);
 
       underConstructEvent(node, {
-        content,
+        content: notFinished,
         id: orderBtnPoint,
         bunch: true,
         eventType: 'click',
@@ -343,7 +360,7 @@ class EventCreator {
       .addEventListener(eventType, toggleCategory));
 
     underConstructEvent(node, {
-      content,
+      content: notFinished,
       id: orderBtnPoint,
       bunch: true,
       eventType: 'click',
