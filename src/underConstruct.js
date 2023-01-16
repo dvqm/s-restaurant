@@ -25,9 +25,7 @@ const btn = document.querySelector('#notFinished');
 const backdrop = document.querySelector('#backdrop');
 
 const cancel = () => {
-  const referrer = new URL(document.referrer).pathname;
-
-  if (referrer === '/sb-restaurant/meals.html') {
+  if (errMsg !== null) {
     window.history.go(-2);
   } else {
     window.history.go(-1);
