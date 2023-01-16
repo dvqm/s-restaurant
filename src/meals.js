@@ -61,7 +61,7 @@ class Meals extends UiCreator {
       header: '.sectionHeader',
       ribbon: '.ribbon',
       orderBtnPoint: '.orderNow',
-      content: this.content.notFinished(),
+      notFinished: this.content.notFinished(),
       underConstructEvent: this.events.underConstruction,
       eventType: 'click',
     }];

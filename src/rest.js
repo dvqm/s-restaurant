@@ -36,13 +36,6 @@ class Restaurants extends UiCreator {
 
     topNavSearchField.placeholder = 'Search restaurant';
 
-    const orderNowBtnsEvent = [this.events.underConstruction, {
-      content: this.content.notFinished(),
-      id: '#orderNow',
-      bunch: true,
-      eventType: 'click',
-    }];
-
     const loginEvent = [this.events.underConstruction, {
       content: this.content.notFinished(),
       id: '#login',
@@ -61,7 +54,6 @@ class Restaurants extends UiCreator {
     const eventsChain = (node) => this.constructor.composer(
       node,
       loginEvent,
-      orderNowBtnsEvent,
       restPaginate,
     );
 

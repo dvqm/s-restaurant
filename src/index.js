@@ -45,6 +45,9 @@ class MainPage extends UiCreator {
       card: 'mealCard',
       prev: 'prevMealBtn',
       next: 'nextMealBtn',
+      notFinished: this.content.notFinished(),
+      underConstructEvent: this.events.underConstruction,
+      eventType: 'click',
     }];
 
     const mealsCategories = [this.events.slider, {
