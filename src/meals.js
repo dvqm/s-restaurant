@@ -46,7 +46,7 @@ class Meals extends UiCreator {
     }
 
     const showMealsOrError = mealsToShow.length === 0
-      ? window.location.href = '/underconstruct.html?errmsg=emptyrest'
+      ? window.location.href = '/sb-restaurant/underconstruct.html?errmsg=emptyrest'
       : this.content.meals(mealsToShow);
 
     this.render(

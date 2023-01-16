@@ -5,6 +5,8 @@ class ContentCreator extends UiCreator {
     super();
 
     this.settings = settings;
+
+    this.repo = 'sb-restaurant';
   }
 
   static sendGETParams(page, key, value) {
@@ -42,7 +44,7 @@ class ContentCreator extends UiCreator {
       className: 'topNav',
       c: [{
         tag: 'a',
-        href: '/',
+        href: `${this.repo}/`,
         target: '_self',
         c: [{
           tag: 'img',
@@ -370,7 +372,7 @@ class ContentCreator extends UiCreator {
                 tag: 'a',
                 className: 'restMenu',
                 title: 'Go to the restaurant menu',
-                href: this.constructor.sendGETParams('meals.html', 'restid', id),
+                href: this.constructor.sendGETParams(`${this.repo}/meals.html`, 'restid', id),
                 c: [{
                   tag: 'img',
                   src: `meals/${mealPict}`,
@@ -462,7 +464,7 @@ class ContentCreator extends UiCreator {
           name,
         }) => ({
           tag: 'a',
-          href: this.constructor.sendGETParams('meals.html', 'menu', name),
+          href: this.constructor.sendGETParams(`${this.repo}/meals.html`, 'menu', name),
           className: 'item',
           c: [{
             tag: 'img',
@@ -585,7 +587,7 @@ class ContentCreator extends UiCreator {
       c: data.cityList.map(([name, href]) => ({
         tag: 'a',
         target: '_self',
-        href: `${href}`,
+        href: `${this.repo}${href}`,
         textContent: name,
       })),
     };
@@ -610,7 +612,7 @@ class ContentCreator extends UiCreator {
             href,
           }) => ({
             tag: 'a',
-            href: `${href}`,
+            href: `${this.repo}${href}`,
             target: '_self',
             textContent: name,
           }))],
