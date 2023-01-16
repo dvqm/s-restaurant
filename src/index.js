@@ -78,13 +78,13 @@ class MainPage extends UiCreator {
     const routeToRests = [this.events.pageRoute, {
       id: 'viewRest',
       eventType: 'click',
-      route: '/rest.html',
+      route: '/sb-restaurant/rest.html',
     }];
 
     const routeToMeals = [this.events.pageRoute, {
       id: 'viewAllCategories',
       eventType: 'click',
-      route: '/meals.html',
+      route: '/sb-restaurant/meals.html',
     }];
 
     const eventsChain = (node) => this.constructor.composer(
