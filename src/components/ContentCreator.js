@@ -44,7 +44,7 @@ class ContentCreator extends UiCreator {
       className: 'topNav',
       c: [{
         tag: 'a',
-        href: `${this.repo}/`,
+        href: '/',
         target: '_self',
         c: [{
           tag: 'img',
@@ -587,7 +587,7 @@ class ContentCreator extends UiCreator {
       c: data.cityList.map(([name, href]) => ({
         tag: 'a',
         target: '_self',
-        href: `${this.repo}${href}`,
+        href: `${href}`,
         textContent: name,
       })),
     };
@@ -612,7 +612,7 @@ class ContentCreator extends UiCreator {
             href,
           }) => ({
             tag: 'a',
-            href: `${this.repo}${href}`,
+            href: `${href}`,
             target: '_self',
             textContent: name,
           }))],
