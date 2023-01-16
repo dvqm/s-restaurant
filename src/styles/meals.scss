@@ -14,19 +14,26 @@
                     center);
   }
 
+  .mealSlider {
+    position: relative;
+  }
+
   button.sliderBtn {
     @include common.sliderBtn(60px);
-    margin: 0 50px;
+    margin: 0 30px;
+
+    position: absolute;
+    top: 330px;
+
+    &:first-child {
+      left: -140px;
+    }
+
+    &:last-child {
+      right: -140px;
+    }
   }
 
-
-  .mealSlider {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-  }
 }
 
 .meals {
@@ -89,7 +96,7 @@
                       normal
       );
 
-      max-height: 140px;
+      min-height: calc(#{common.$composition-font-size} * 13);
       overflow: hidden;
     }
 
