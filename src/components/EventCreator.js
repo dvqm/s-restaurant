@@ -84,6 +84,8 @@ class EventCreator {
       ifSlider,
     } = sets;
 
+    sessionStorage.setItem('prevUrl', window.location.href);
+
     const backdrop = content.querySelector('#backdrop');
 
     backdrop.addEventListener(eventType, (e) => e.target.parentNode.remove());
@@ -281,6 +283,7 @@ class EventCreator {
 
       headersCollection.forEach((heading) => heading.addEventListener(eventType, scroll));
     };
+
     const toggleDisabled = (name, btnsArr) => {
       btnsArr.forEach((btn) => {
         btn.disabled = false;
@@ -291,15 +294,17 @@ class EventCreator {
     };
 
     const mealsOffset = (name, index, categArr, mealsArr, point) => {
-      const nextCategory = categArr[index + 1] ? categArr[index + 1].textContent : -1;
+      const nextCategory = categArr[index + 1] ? categArr[index + 1].textContent.toLowerCase() : -1;
 
-      const startOfCategory = mealsArr.findIndex((heading) => heading.textContent === name);
+      const startOfCategory = mealsArr.findIndex((heading) => heading.textContent
+        .toLowerCase() === name);
 
-      const endOfCategory = mealsArr.findIndex((heading) => heading.textContent === nextCategory);
+      const endOfCategory = mealsArr.findIndex((heading) => heading.textContent
+        .toLowerCase() === nextCategory);
 
       let result;
 
-      if (name === categArr[0].textContent) {
+      if (name === categArr[0].textContent.toLowerCase()) {
         result = mealsArr.slice(1, mealsArr.length);
       } else if (nextCategory === -1) {
         result = mealsArr.slice(startOfCategory, mealsArr.length + 1);
@@ -320,7 +325,8 @@ class EventCreator {
     };
 
     if (startFrom !== null) {
-      const index = categories.findIndex((category) => category.textContent === startFrom);
+      const index = categories.findIndex((category) => category.textContent
+        .toLowerCase() === startFrom);
 
       toggleDisabled(startFrom, categories);
 
@@ -337,7 +343,7 @@ class EventCreator {
       const categoryIndex = categories.indexOf(e.target);
 
       mealsOffset(
-        e.target.textContent,
+        e.target.textContent.toLowerCase(),
         categoryIndex,
         categories,
         mealsClone,
@@ -365,6 +371,10 @@ class EventCreator {
       bunch: true,
       eventType: 'click',
     });
+
+    const headers = node.querySelectorAll(header);
+
+    scrollToTop(headers);
 
     return node;
   }

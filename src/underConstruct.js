@@ -25,11 +25,7 @@ const btn = document.querySelector('#notFinished');
 const backdrop = document.querySelector('#backdrop');
 
 const cancel = () => {
-  if (errMsg !== null) {
-    window.history.go(-2);
-  } else {
-    window.history.go(-1);
-  }
+  window.location.href = sessionStorage.getItem('prevUrl');
 };
 
 btn.addEventListener('click', cancel);
