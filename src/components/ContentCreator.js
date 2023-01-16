@@ -484,7 +484,7 @@ class ContentCreator extends UiCreator {
             src: `meals/foodCategories/${img}`,
           }, {
             tag: 'span',
-            textContent: name,
+            textContent: name.replace(/^\w/, (c) => c.toUpperCase()),
           }],
         })),
       },
