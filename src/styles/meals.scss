@@ -30,6 +30,7 @@
 }
 
 .meals {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
 
@@ -87,6 +88,9 @@
                       italic,
                       normal
       );
+
+      max-height: 140px;
+      overflow: hidden;
     }
 
     button.orderNow {
@@ -145,3 +149,4 @@
     text-align: center;
   }
 }
+
