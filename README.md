@@ -1,4 +1,6 @@
 # Restaurant Page
+[Github pages](https://ocnm.github.io/sb-restaurant/)
+
 A mini website for the restaurant's aggregator.
 
 * Mixins and variables in SCSS.
@@ -11,5 +13,3 @@ A mini website for the restaurant's aggregator.
 * Javascript.
 * SCSS.
 * Webpack.
-
-[Github pages](https://ocnm.github.io/sb-restaurant/)
