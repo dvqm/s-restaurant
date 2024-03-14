@@ -1,5 +1,5 @@
 # Restaurant Page
-[Github pages](https://ocnm.github.io/sb-restaurant/)
+[Github pages](https://dvqm.github.io/s-restaurant/)
 
 A mini website for the restaurant's aggregator.
 
