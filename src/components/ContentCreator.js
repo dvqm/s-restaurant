@@ -6,7 +6,7 @@ class ContentCreator extends UiCreator {
 
     this.settings = settings;
 
-    this.repo = 'sb-restaurant';
+    this.repo = 's-restaurant';
   }
 
   static sendGETParams(page, key, value) {
